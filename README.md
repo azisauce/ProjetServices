@@ -1,23 +1,7 @@
-<!-- PROJECT SHIELDS -->
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/ivqonsanada/phive">
-    <img src="public/icon-192x192.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">PHive</h3>
+  <h3 align="center">Depanini</h3>
 
   <p align="center">
-    A kind of freelancing website for College
+    A Fullstack Project
     <br />
     <a href="https://github.com/ivqonsanada/phive"><strong>Explore the docs »</strong></a>
     <br />

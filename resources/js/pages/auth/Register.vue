@@ -127,9 +127,7 @@
           </router-link>
         </p>
       </div>
-      <div v-if="$matchMedia.xl" class="desktop-login__footer">
-        PHive, All Rights Reserved. &copy; 2021 . | Created by FILKOM
-      </div>
+      
     </div>
   </div>
 </template>
@@ -173,7 +171,7 @@ export default {
           class: {
             midImage: ''
           },
-          text: 'Expand Your Careers.'
+          text: 'Lets make it easy!'
         }
       }
 
@@ -186,7 +184,7 @@ export default {
         class: {
           midImage: 'row-reverse'
         },
-        text: 'Project for Everyone'
+        text: 'Help for Everyone'
       }
     },
 

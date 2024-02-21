@@ -36,11 +36,11 @@
       <div class="login-role--container">
         <div>
           <input id="login-student" v-model="form.role" class="login-radio" type="radio" value="Student">
-          <label class="login-radio--label" for="login-student" @click="chooseStudent">Student</label>
+          <label class="login-radio--label" for="login-student" @click="chooseStudent">User</label>
         </div>
         <div>
           <input id="login-lecturer" v-model="form.role" class="login-radio" type="radio" value="Lecturer">
-          <label class="login-radio--label" for="login-lecturer" @click="chooseLecturer">Lecturer</label>
+          <label class="login-radio--label" for="login-lecturer" @click="chooseLecturer">Helper</label>
         </div>
       </div>
 
@@ -92,15 +92,8 @@
             <b>Sign Up</b>
           </router-link>
         </p>
-        <p>
-          <router-link :to="{ name: 'password.request' }" class="login-link">
-            <b>Forgot Password?</b>
-          </router-link>
-        </p>
       </div>
-      <div v-if="$matchMedia.xl" class="desktop-login__footer">
-        PHive, All Rights Reserved. &copy; 2021 . | Created by FILKOM
-      </div>
+
     </div>
   </div>
 </template>
@@ -146,7 +139,7 @@ export default {
           class: {
             midImage: ''
           },
-          text: 'Expand Your Careers.'
+          text: 'Lets make it easy!'
         }
       }
 
@@ -159,7 +152,7 @@ export default {
         class: {
           midImage: 'row-reverse'
         },
-        text: 'Project for Everyone'
+        text: 'Help for Everyone'
       }
     }
   },

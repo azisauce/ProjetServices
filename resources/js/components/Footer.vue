@@ -4,10 +4,10 @@
       <div class="footer__description">
         <img src="/images/footer-logo.svg" alt="">
         <p v-if="$matchMedia.xl">
-          &copy; 2020
+          &copy; 2024
         </p>
         <p v-if="$matchMedia.xl">
-          Expanding Student’s Career by doing projects from their lecturer will give them a lot of benefits, our values is giving the same opportunity to all students who wants to get an experience working on project.
+          Making the world easier is our main goal, our values is degitalize the process of searching for help.
         </p>
       </div>
 
@@ -29,15 +29,20 @@
             </div>
             <div class="footer-nav__menu">
               <div class="flex-row space-between w-100">
-                <span>Further Information</span>
+                <span>Team</span>
                 <div v-show="!$matchMedia.xl">
                   <span class="iconify footer-nav__icon" data-icon="entypo:chevron-small-down" />
                 </div>
               </div>
               <div v-show="$matchMedia.xl" class="footer-nav__menu--items">
-                <div>Terms & Conditions</div>
-                <div>Privacy Policy</div>
+                <div>Amri Ghada</div>
+                <div>Ben Hassen Adem
               </div>
+                <div>Ben Slama Baha</div>
+                <div>Ezzahi Arij</div>
+                <div>Rhaiem Marwen</div>
+                <div>Turki Aziz</div>
+
             </div>
           </div>
           <div class="footer-icon__section">
@@ -59,9 +64,7 @@
           </div>
         </div>
 
-        <p class="footer__copyright">
-          PHive, All Rights Reserved. | Created by FILKOM
-        </p>
+        
       </div>
     </div>
   </footer>

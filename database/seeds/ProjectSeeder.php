@@ -26,68 +26,64 @@ class ProjectSeeder extends Seeder
 
         $projectName = [
             '', '',
-            'Gapura UB Development',
-            'iNews Apps Development',
-            'Science-Fiction Story Generator AI',
-            'Philosopher AI',
-            'Random Project Name',
-            'Freelancer Apps Development',
-            'K-Pay Payments Service',
-            'Cloud Monitoring Apps',
-            'Redesign SIAM UB Website',
-            'SIAM UB Website Development',
-            'SIAM UB Data Development',
+            'Mecanicien chez vous',
+            'Mohsen tech',
+            'Electricien 24/7',
+            'Plombier Ariena',
+            'After build',
+            'Dari Deco',
+            'Cycliste l3ada',
+            'Karhba Net',
+            'Transporteur',
+            'Decorateur',
+            'Traiteur',
         ];
 
         $projectsDummy = [
             [],[],[],[],[],[],[],[],[],[],[],[],[],
             [
-                'title' => 'Financial Calculator',
+                'title' => 'Mecanicien chez vous',
                 'description' => 'I need a group of students to design and implement a financial calculator (web-based) for me that can calculate: 1. Fund requirement 2. Financial Check-up 3. Pension Fund 4. Education Fund 5. Marriage Fund 6. Latte factor for description and reference.'
             ],
             [
-                'title' => 'Website for Pet Accessories',
+                'title' => 'Mohsen tech',
                 'description' => 'Hey students, I need someone to make me an e-catalogue for pet accessories products. The pet accessories consists of collars, leash, harness, and pet toys. Product photos will be sent as soon as you are ready, it may need a little editing.'
             ],
             [
-                'title' => 'Chatting App using the base64 Method',
+                'title' => 'Electricien 24/7',
                 'description' => 'I want someone to make me a chatting app that can send document and image data using the base64 algorithm to secure data when chatting.'
             ],
             [
-                'title' => 'Asset Management Website',
+                'title' => 'Plombier Ariena',
                 'description' => 'My friend and I need a website to manage assets and its reports. You need to use ReactJS for the front-end and / or Node JS for the back-end. You also need to use the SCRUM methodology. '
             ],
             [
-                'title' => 'Company Profile Website',
+                'title' => 'After build',
                 'description' => 'Dear students, I want to create a company profile website like https://ottobanindonesia.com/ciputat/. There is a product view, blog and news, and other stuff. You may use CodeIgniter 3 or other frameworks, but CodeIgniter 3 is preferrable. Please apply.'
             ],
             [
-                'title' => 'Mobile Phone Store Inventory System',
+                'title' => 'Dari Deco',
                 'description' => 'Hello, I’m looking for a web developer/programmer to create a store inventory website that has these features: Sales records, purchase records, sales, purchases, stocks of goods, profit, and loss reports. Need this ASAP.'
             ],
             [
-                'title' => 'Multi Warehouse App',
+                'title' => 'Cycliste l3ada',
                 'description' => 'Need a web-based and open source multi warehouse app to manage stocks in warehouses. The key feature is checking goods to minimize twin items. The latest version of the used programming language / CodeIgniter and MySQL, MariaDB is a MUST. '
             ],
             [
-                'title' => 'Safety Flight Demonstration Animation',
+                'title' => 'Karhba Net',
                 'description' => 'Hey students, I need someone to create an animation explaining the safety flight demonstration as an animation. You may use Blender or other software. Need this soon. Please contact me for further information.'
             ],
             [
-                'title' => 'Clinic Management App',
+                'title' => 'Transporteur',
                 'description' => 'Assalamualaikum Wr. Wb. My friend has a clinic that needs an app to manage it remotely. Starting from incoming patients, adding private data and the patient’s medical records, then the data needs to be sent to the doctor, then the doctor’s note is inputted into a medical record, which then connects with the prescription that will be ordered and placed in the drugs store. Then the output is a receipt for payment at the cashier.'
             ],
             [
-                'title' => 'Integrating Gojek Application into My Own App',
+                'title' => 'Decorateur',
                 'description' => 'I need someone to integrate the Gojek app into my application. My app needs a ready-made online delivery system. For those who have an online delivery application or have worked on an online delivery application, please apply on this project. '
             ],
             [
-                'title' => 'Expert System Android-based',
+                'title' => 'Traiteur',
                 'description' => 'I need a group of students to make an Android-based mobile application (expert system) using the Naive Bayes Algorithm to determine the accuracy of Covid symptoms.'
-            ],
-            [
-                'title' => 'UI/UX and Prototyping',
-                'description' => 'Need a UI/UX developer for projects that will last for 2-3 months. You need to make UI/UX according to the concept that will be sent. The projects range from creating user flow (web and mobile), creating low-fidelity design and high-fidelity design, to making mockups and prototyping.'
             ],
         ];
 
@@ -99,20 +95,20 @@ class ProjectSeeder extends Seeder
         ];
 
         $skills = [
-            'Communication', 'Design Thinking', 'Research', 'Design', 'Figma', 'Adobe XD'
+            'Expertise'
         ];
 
         $requirements = [
-            'Specific technical skills or languages are not required but strong designing skills and hunger to learn are. Out-of-school experiences like winning contests, prior internships, open source contribution etc. will make your application stand out.',
-            'You have excellent written and verbal communication skills.',
-            'You should have strong decision making skills and use sound reasoning to communicate.',
-            'Familiar with Figma, Adobe XD, or Sketch.',
-            'Able to use Photoshop or Illustrator for designing purposes.',
-            'Eager to learn'
+            '',
+            '',
+            '',
+            '',
+            '',
+            ''
         ];
 
         $salary = [
-            '150000', '250000', '450000', '725000', '1200000', '0'
+            '50', '70', '100', '200', '120', '40'
         ];
 
         // $min_points = [
@@ -120,15 +116,15 @@ class ProjectSeeder extends Seeder
         // ];
 
         $level_applicant = [
-            'Easy',
-            'Medium',
-            'Hard',
-            'Expert'
+            '',
+            '',
+            '',
+            ''
         ];
 
         $payment_type = [
-            'person',
-            'project'
+            '',
+            ''
         ];
 
 /////////////////////////////////////////////////////////////////////////////////

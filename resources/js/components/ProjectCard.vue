@@ -29,40 +29,9 @@
             </div>
           </div>
           <div>
-            <div class="project__card--bounty-info">
-              <div class="info-item--container">
-                <span class="bounty--span">LVL</span>
-                <span>{{ project.level_applicant ? project.level_applicant : 'Not Specified' }}</span>
-              </div>
-              <div v-if="project.salary" class="info-item--container">
-                <span>
-                  <span
-                    class="iconify info-item--icon"
-                    data-icon="fa-solid:dollar-sign"
-
-                    width="8"
-                    height="15"
-                  />
-                </span>
-                <span>Salary</span>
-              </div>
-              <div v-if="project.certificate" class="info-item--container">
-                <span>
-                  <span
-                    class="iconify info-item--icon"
-                    data-icon="la:certificate-solid"
-
-                    width="15"
-                    height="15"
-                  />
-                </span>
-                <span>Certificate</span>
-              </div>
-            </div>
             <div class="project-card__extra-info--container">
               <div class="project-card__extra-info">
                 <div>&bull; Posted {{ getHumanDate(project.created_at) }}</div>
-                <div>&bull; Max. {{ project.max_person }} Person</div>
               </div>
               <button v-if="$matchMedia.xl && (!user || user.role === 'Student' )" class="btn--clear" @click="showWishlist">
                 <span class="iconify project-card__wish" data-icon="mdi:dots-horizontal" width="22" />

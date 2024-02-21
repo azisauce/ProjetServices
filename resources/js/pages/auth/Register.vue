@@ -33,11 +33,11 @@
       <div class="login-role--container">
         <div>
           <input id="login-student" v-model="form.role" class="login-radio" type="radio" value="Student" name="role">
-          <label class="login-radio--label" for="login-student" @click="chooseStudent">Student</label>
+          <label class="login-radio--label" for="login-student" @click="chooseStudent">User</label>
         </div>
         <div>
           <input id="login-lecturer" v-model="form.role" class="login-radio" type="radio" value="Lecturer" name="role">
-          <label class="login-radio--label" for="login-lecturer" @click="chooseLecturer">Lecturer</label>
+          <label class="login-radio--label" for="login-lecturer" @click="chooseLecturer">Helper</label>
         </div>
       </div>
 

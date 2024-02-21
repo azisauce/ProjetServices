@@ -2,7 +2,7 @@
   <div class="explore--container">
     <div class="explore__top--container">
       <h1 class="explore__top--h1">
-        Explore for Your Projects
+        Find the best service for you
       </h1>
 
       <div class="explore__search--container">
@@ -10,7 +10,7 @@
           <input
             v-if="$matchMedia.xl" v-model="query" type="search"
             class="form-tag__input"
-            placeholder="Search by Project Titles"
+            placeholder="Search by Service Name"
             @keyup.enter="search"
           >
           <input
@@ -28,14 +28,9 @@
 
     <div class="explore__main--container">
       <h2 class="explore__main--h2">
-        Available Projects
+        Available Services
       </h2>
-      <button class="btn--clear flex-center" @click="toggleFilter">
-        <div class="icon">
-          <span class="iconify" data-icon="ic:round-filter-list" height="24" width="24" />
-          <span v-if="$matchMedia.xl">Filters</span>
-        </div>
-      </button>
+
     </div>
 
     <Modal v-if="!$matchMedia.xl" ref="filtersModal" :type="`small`">
@@ -140,7 +135,7 @@
     </div>
 
     <button v-if="canLoadMore && projects.length !== 0" class="btn btn--blue btn__load-more" @click="loadMore">
-      <span>Load More</span><span v-if="$matchMedia.xl">Projects</span>
+      <span>Load More</span><span v-if="$matchMedia.xl">Services</span>
     </button>
   </div>
 </template>

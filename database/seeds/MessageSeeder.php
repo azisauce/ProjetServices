@@ -21,7 +21,7 @@ class MessageSeeder extends Seeder
             'message_header_id' => 1,
             'sender_id' => 2,
             'recipient_id' => 1,
-            'message' => 'Good afternoon Rupert Henderson,<br />Hope you see my offer about the latest project which appear on your inbox. You can see the details about the project first before you decide to accept the offer or not.<br />I’m waiting for the good news ahead from you.<br />Best Regards, <strong>Prof. Dr. Alexander Hoffman</strong>',
+            'message' => 'Good afternoon,<br />Hope you see my demand about your service which appear on your inbox. <strong>A friend</strong>',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -30,7 +30,7 @@ class MessageSeeder extends Seeder
             'message_header_id' => 1,
             'sender_id' => 1,
             'recipient_id' => 2,
-            'message' => 'Good afternoon Prof,<br />I hope we can discuss this project first before we jump into agreement on both sides, I’m here to negotiate the offers.<br />Thank you!',
+            'message' => 'Good afternoon,<br />I hope we can discuss this service first before we jump into agreement on both sides, I’m here to negotiate the payement.<br />Thank you!',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

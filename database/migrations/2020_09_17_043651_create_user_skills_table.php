@@ -16,7 +16,7 @@ class CreateUserSkillsTable extends Migration
         Schema::create('user_skills', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('name')->nullable();
+            $table->string('name',191)->nullable();
             // $table->unsignedBigInteger('skill_id')->nullable();
 
             $table->unique(['user_id', 'name']);

@@ -24,11 +24,11 @@ class UserSeeder extends Seeder
         $faker = Faker::create('id_ID');
 
         $major = [
-            'Informatics Engineering',
-            'Informaton System',
-            'Computer Engineering',
-            'Information Technology',
-            'Information Technology Education'
+            '.',
+            '.',
+            '.',
+            '.',
+            '.'
         ];
 
         $university = [
@@ -36,10 +36,10 @@ class UserSeeder extends Seeder
         ];
 
         $expertise = [
-            'Frontend Engineer',
-            'Backend Engineer',
-            'UI/UX Designer',
-            'Data Expert'
+            'Electirician',
+            'Mecanisian',
+            'Traiteur',
+            'Veto'
         ];
 
         $student_identity_number = [
@@ -56,34 +56,34 @@ class UserSeeder extends Seeder
 
         $skills = [
             'verrel' => [
-                'Leadership', 'User Experiences (UX)', 'User Interface Design',
+                'Friendly', 'Skilled', 'Rapid',
                 // 'Event Planning', 'Graphic Design', 'Event Management', 'Adobe Illustrator', 'Adobe XD', 'Adobe Photoshop', 'Adobe InDesign', 'Figma', 'Organization Skills'
             ],
         ];
 
         $experiences = [
             'verrel' => [
-                'Figma', 'Adobe XD', 'Design Thinking', 'Design', 'Communication', 'Research'
+                'Hotels', 'Houses', 'AutoMobiles', 'Design', 'Communication', 'Helpful'
             ],
         ];
 
         $users = [];
 
         $users[] = [
-            'first_name' => 'Ivqonnada ',
-            'last_name' => 'Al Mufarrih',
+            'first_name' => 'Marwen ',
+            'last_name' => 'Rhaiem',
             'email' => 'student@example.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'tagname' => 'ivqonsanada',
+            'tagname' => 'Rhaiemess',
             'role' => 'Student',
-            'expertise' => 'Frontend Engineer',
+            'expertise' => 'Student',
             'identity_number' => '175150200111042',
-            'university' => 'University of Brawijaya',
-            'faculty' => 'Faculty of Computer Science',
+            'university' => 'SupCom',
+            'faculty' => 'SupCom',
             'major' => 'Informatics Engineering',
-            'location' => 'Malang, Indonesia',
+            'location' => 'Ariena,Tunisia',
             'biography' => $faker->text(),
             'github' => 'https://github.com/ivqonsanada',
             'linkedin' => 'https://linkedin.com/in/ivqonnada',
@@ -104,20 +104,20 @@ class UserSeeder extends Seeder
         $users = [];
 
         $users[] = [
-            'first_name' => 'Stephen ',
-            'last_name' => 'R. Covey, Ph.D.',
+            'first_name' => 'Amir ',
+            'last_name' => 'Bahloul',
             'email' => 'lecturer@example.ac.id',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'tagname' => 'covey',
-            'role' => 'Lecturer',
-            'expertise' => 'UI/UX Designer Specialist',
+            'tagname' => 'plomb',
+            'role' => 'Plombier',
+            'expertise' => 'Plombier',
             'identity_number' => '197408232000121002',
-            'university' => 'University of Brawijaya',
-            'faculty' => 'Faculty of Computer Science',
-            'major' => 'Informatics Engineering',
-            'location' => 'Malang, Indonesia',
+            'university' => '.',
+            'faculty' => '.',
+            'major' => '.',
+            'location' => 'Ariana, Tunisia',
             'biography' => $faker->text(),
             'is_open_hired' => false,
             'created_at' => now(),
@@ -145,7 +145,7 @@ class UserSeeder extends Seeder
                 'university' => 'University of Brawijaya',
                 'faculty' => 'Faculty of Computer Science',
                 'major' => $major[array_rand($major)],
-                'location' => 'Malang, Indonesia',
+                'location' => 'Ariana, Tunisia',
                 'biography' => $faker->text(),
                 'is_open_hired' => false,
                 'created_at' => now(),
@@ -154,20 +154,20 @@ class UserSeeder extends Seeder
         }
 
         $users[] = [
-            'first_name' => 'M. Verrel',
-            'last_name' => ' Radiman',
-            'email' => 'verrel@example.com',
+            'first_name' => 'Aziz',
+            'last_name' => 'Turki',
+            'email' => 'turki@example.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'tagname' => 'verrelradiman',
+            'tagname' => 'etorckie',
             'role' => 'Student',
-            'expertise' => 'UI/UX Designer',
+            'expertise' => '.',
             'identity_number' => '175150200111051',
-            'university' => 'University of Brawijaya',
-            'faculty' => 'Faculty of Computer Science',
-            'major' => 'Informatics Engineering',
-            'location' => 'Malang, Indonesia',
+            'university' => 'SupCom',
+            'faculty' => 'SupCom',
+            'major' => '.',
+            'location' => 'Ariena, Tunisia',
             'biography' => $faker->text(),
             'is_open_hired' => true,
             'created_at' => now(),
@@ -183,8 +183,8 @@ class UserSeeder extends Seeder
 
         $userExperiences[] = [
             'user_id' => 8,
-            'project_name' => 'Employee Monitoring Apps',
-            'project_role' => 'UI/UX Designer',
+            'project_name' => 'Want help here?',
+            'project_role' => 'Cars',
             'start_date' => Carbon::createFromFormat('Y-m-d\TH:i:s+', '2019-05-31T17:00:00.000Z'),
             'end_date' =>  Carbon::createFromFormat('Y-m-d\TH:i:s+', '2019-03-31T17:00:00.000Z'),
         ];
@@ -204,12 +204,12 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
             'tagname' => 'ajigumiwang',
             'role' => 'Student',
-            'expertise' => 'Data Expert',
+            'expertise' => '.',
             'identity_number' => '175150200111091',
-            'university' => 'University of Brawijaya',
-            'faculty' => 'Faculty of Computer Science',
-            'major' => 'Informatics Engineering',
-            'location' => 'Malang, Indonesia',
+            'university' => 'University',
+            'faculty' => 'Faculty',
+            'major' => '.',
+            'location' => 'Tunis, Tunisia',
             'biography' => $faker->text(),
             'is_open_hired' => true,
             'created_at' => now(),

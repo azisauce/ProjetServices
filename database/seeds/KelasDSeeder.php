@@ -23,41 +23,41 @@ class KelasDSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
         $expertises = [
-            'Frontend Engineer',
-            'Backend Engineer',
-            'UI/UX Designer',
-            'Data Expert'
+            'Electrician',
+            'Cycliste',
+            'Plombier',
+            'Mecanicien'
         ];
 
         $skills = [
-            'Frontend Engineer' => [
+            'Electrician' => [
                  'HTML', 'HTML5', 'Cascading Style Sheets (CSS)', 'JavaScript', 'JSON', 'XML', 'Front-end Development', 'Front-end Coding', 'Front-end Design', 'Front-end Engineering', 'Bootstrap', 'React', 'Vue.js', 'Semantic UI', 'Angular', 'Foundation',
             ],
-            'Backend Engineer' => [
+            'Cycliste' => [
                 'PHP', 'SQL', 'Microsoft SQL Server', 'MySQL', 'Java', 'C++', 'C', 'Node.js', 'Back-end Web Development', 'C#', 'MongoDB', 'Laravel', 'Django', 'Ruby on Rails', 'CakePHP', 'Express.Js', 'Spring Boot',
             ],
-            'UI/UX Designer' => [
+            'Plombier' => [
                 'User Experience (UX)', 'User Interface Design', 'Graphic Design', 'User Experience Design (UED)', 'User Interface Prototyping', 'User Interface Programming', 'User Experience Testing', 'UX Research',
             ],
-            'Data Expert' => [
+            'Mecanicien' => [
                 'Machine Learning', 'Requirements Analysis', 'Data Analysis', 'Data Mining', 'Data Modeling', 'Big Data', 'Data Visualization', 'Data Science', 'Data Warehousing', 'Python', 'Matlab', 'Data Classification', 'Exploratory Data Analysis', 'Data Engineering', 'SPARQL', 'Web Crawling', 'Protege'
             ]
         ];
 
         $biographies = [
-            'Frontend Engineer' => [
+            'Electrician' => [
                 'An experienced Front-end Web Developer with an experience in collaborating with creative and development teams on the execution of ideas and projects. Experienced with efficient coding websites and applications using modern HTML, CSS, and JavaScript. Building state-of-the-art, easy to use, user-friendly websites and applications is truly a passion of mine.',
                 'Innovative Front-end Developer with an experience building and maintaining responsive websites. Proficient in HTML, CSS, JavaScript, plus modern libraries and frameworks. Passionate about usability and possess working knowledge of Adobe Photoshop.',
             ],
-            'Backend Engineer' => [
+            'Cycliste' => [
                 'Experienced and results-oriented Back-end Developer with a deep passion for software engineering. Offering a strong attention to detail and accuracy, excellent problem-solving skills, and the important ability to work in fast-paced team environments, I am a reliable individual with determination to meet and exceed all assigned results.',
                 'Results-driven and award-winning Back-end Developer with comprehensive mastery of multiple web design and development software languages, such as Java, Java Script, PHP, Eclipse, JUnit, C++, and HTML. Detail-oriented Oracle Certified Professional and Microsoft Certified Developer accustomed to working in fast paced/multitasking environments within very tight deadlines.',
             ],
-            'UI/UX Designer' => [
-                'Detail-oriented and motivated UI/UX Designer with a comprehensive background and extensive experience in participating in all aspects of mobile software application development. Skilled in creating comprehensive user inteface, managing documents and records, and coordinating team members. Creative professional with great communication skills and important ability to work and perform well in a team.',
+            'Plombier' => [
+                'Detail-oriented and motivated Plombier with a comprehensive background and extensive experience in participating in all aspects of mobile software application development. Skilled in creating comprehensive user inteface, managing documents and records, and coordinating team members. Creative professional with great communication skills and important ability to work and perform well in a team.',
                 'I am a computer engineering student with passion in the areas of User Experience Design. I have a diverse experience investigating user goals and workflows through usability testing and user research processes, including: use cases, surveys, heuristic evaluations, workshops and contextual inquiry. This has gained me a solid knowledge of user interface and user experience design.',
             ],
-            'Data Expert' => [
+            'Mecanicien' => [
                 'Hello! I am a software engineering student working on web applications and web infrastructure. I have been tinkering since I was a kid.  I have had experiences in help desk, graphic/web design, data analysis, data science and sysadmin/devops. I can help everywhere in the Although, I do think my strongest skills are in data engineering and server administration.',
                 'Motivated Data Scientist and Analyst with a demonstrated experience in improving software performance, buidling a predictive model using machine learning, and developing new software functionalities. Offers proven track record of extraordinary achievements, strong attention to detail, and ability to finish projects on schedule and within budget.',
             ]
@@ -133,10 +133,10 @@ class KelasDSeeder extends Seeder
                 'role' => 'Student',
                 'expertise' => $expertise,
                 'identity_number' => '1751502001110' . $i,
-                'university' => 'University of Brawijaya',
-                'faculty' => 'Faculty of Computer Science',
-                'major' => 'Informatics Engineering',
-                'location' => 'Malang, Indonesia',
+                'university' => 'University',
+                'faculty' => 'Faculty',
+                'major' => 'Major',
+                'location' => 'Ariena ,Tunisia',
                 'biography' => $biographies[$expertise][0],
                 'is_open_hired' => true,
                 'created_at' => now(),

@@ -2,15 +2,7 @@
   <div class="project-details--container">
     <div class="details--top-container">
       <div>
-        <div class="project-details--image-container">
-          <div class="project-details--image">
-            <expandable-image
-              :src="project.thumbnail_url"
-              :close-on-background-click="true"
-              class="details__image"
-            />
-          </div>
-        </div>
+        
       </div>
       <div v-if="$matchMedia.xl" class="details__top--left">
         <div class="z-1">
@@ -176,36 +168,7 @@
             </div>
           </div>
         </div>
-        <div v-if="!$matchMedia.xl" class="project-summary">
-          <h2 class="summary--h2">
-            Summary Project
-          </h2>
-          <div class="summary--items">
-            <div
-              v-for="(summary, index) in summaries"
-              :key="`SummaryItem-${index}`"
-              class="summary--item"
-            >
-              <template v-if="summary.type === 'icon'">
-                <div class="summary-icon">
-                  <span
-                    class="iconify"
-                    :data-icon="summary.icon"
-                    width="15"
-                    height="15"
-                  />
-                </div>
-                {{ summary.text }}
-              </template>
-              <template v-else>
-                <div class="summary-icon">
-                  <span class="summary--text-icon">{{ summary.icon }}</span>
-                </div>
-                {{ summary.text }}
-              </template>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <div class="desktop__body--right">
         <div v-if="$matchMedia.xl" class="lecturer-info--left">

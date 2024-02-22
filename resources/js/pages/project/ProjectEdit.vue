@@ -3,12 +3,12 @@
     <TopImage :type="2" />
 
     <h2 class="post__h1">
-      {{ heading }}
+      Edit
     </h2>
 
     <div class="form-group__container mb-2_5">
       <h4 class="form-group__input-name">
-        Project Thumbnail
+        Service Thumbnail
       </h4>
       <div class="form-avatar-group__container">
         <img class="edit-profile--img" :src="form.thumbnail ? form.thumbnail : `/images/post-placeholder-img.png`" alt="">
@@ -32,7 +32,7 @@
       <div class="">
         <div class="form-group__container">
           <h4 class="form-group__input-name">
-            Project Title
+            Service Name
           </h4>
           <div class="">
             <input v-model="form.title" class="form-group__input-text" placeholder="Type your project title">
@@ -49,33 +49,11 @@
           </div>
         </div>
 
-        <div class="form-group__container">
-          <h4 class="form-group__input-name">
-            Expertise Role
-          </h4>
-          <div class=" checkbox-group">
-            <label class="checkbox-container checkbox-container--post">UI / UX Designer
-              <input v-model="form.ui_ux_designer" type="checkbox">
-              <span class="checkbox-checkmark" />
-            </label>
-            <label class="checkbox-container checkbox-container--post">Frontend Engineer
-              <input v-model="form.front_end_engineer" type="checkbox">
-              <span class="checkbox-checkmark" />
-            </label>
-            <label class="checkbox-container checkbox-container--post">Backend Engineer
-              <input v-model="form.back_end_engineer" type="checkbox">
-              <span class="checkbox-checkmark" />
-            </label>
-            <label class="checkbox-container checkbox-container--post">Data Expert
-              <input v-model="form.data_expert" type="checkbox">
-              <span class="checkbox-checkmark" />
-            </label>
-          </div>
-        </div>
+        
 
         <div class="form-group__container">
           <h4 class="form-group__input-name">
-            Quota
+            How many people works on this service?
           </h4>
           <div class="select">
             <select v-model="form.max_person">
@@ -115,54 +93,15 @@
         </div>
       </div>
 
-      <div class="form-group__container">
-        <h4 class="form-group__input-name">
-          Applicant Type
-        </h4>
-        <div class="select">
-          <select v-model="form.applicant_type">
-            <option value="Individual">
-              Individual
-            </option>
-            <option value="Team">
-              Team
-            </option>
-            <option value="Individual & Team">
-              Individual & Team
-            </option>
-          </select>
-          <span class="focus" />
-        </div>
-      </div>
+      
 
-      <div class="form-group__container">
-        <h4 class="form-group__input-name">
-          Project Difficulty
-        </h4>
-        <div class="select">
-          <select v-model="form.level_applicant">
-            <option>
-              Easy
-            </option>
-            <option>
-              Medium
-            </option>
-            <option>
-              Hard
-            </option>
-            <option>
-              Expert
-            </option>
-          </select>
-          <span class="focus" />
-        </div>
-      </div>
+      
 
       <hr class="form--hr">
 
       <div class="form-group__container">
         <h4 class="form-group__input-name">
-          Project Description
+          Service Description
         </h4>
         <div class="">
           <textarea v-model="form.description" class="form-group__input-textarea" placeholder="Max. 500 words" rows="5" />
@@ -172,7 +111,7 @@
       <div class="form-group__container mb-3">
         <div class="flex-row space-between">
           <h4 class="form-group__input-name">
-            Requirements
+            Requirements needed
           </h4>
         </div>
         <div class="">
@@ -216,116 +155,34 @@
         </div>
       </div>
 
-      <div class="form-group__container">
-        <div class="flex-row space-between">
-          <h4 class="form-group__input-name">
-            Skills Required
-          </h4>
-          <div class="flex-row unselectable post__add-skill pointer" @click="showAddSkill">
-            <span class="iconify button__add-skill--icon mr-0_5" data-icon="ic:round-add-circle" />
-            <span class="button__add-skill--text">Add Skills</span>
-          </div>
-        </div>
-        <div class="">
-          <div class="form-group__input-select info__skill-container">
-            <p v-if="form.skills.length === 0" class="info__p">
-              Let's add your project required skills
-            </p>
-            <BubbleSkill v-for="skill in form.skills" :key="`skill-${skill.name}`" color="blue" :name="skill.name" :deletable="true" @click="deleteSkill" />
-          </div>
-
-          <Modal ref="addSkillModal" :type="`small`">
-            <template v-slot:header>
-              <div>
-                <h4 class="post__modal--h4 my-0">
-                  Add Skills
-                </h4>
-              </div>
-            </template>
-
-            <template v-slot:body>
-              <div>
-                <hr class="my-0 mb-2_5">
-                <div>
-                  <div class="">
-                    <input v-model="anotherSkills" class="form-group__input-text mb-0_5" placeholder="e.g., Communication, Laravel, VueJS">
-                    <p class="info__p">
-                      Add multiple Skills separated by comma (<span class="iconify" data-icon="mdi:comma" width="12" height="12" />)
-                    </p>
-                    <p class="info__p">
-                      Can add {{ 20 - skillLength }} more skills
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </template>
-
-            <template v-slot:footer>
-              <div class="btn btn--blue ml-auto" @click="addSkill">
-                Add Skills
-              </div>
-            </template>
-          </Modal>
-        </div>
-      </div>
 
       <div class="form-group__container">
         <h4 class="form-group__input-name">
-          Rewards
+          Payement methods
         </h4>
         <div class=" checkbox-group">
           <div class="">
-            <label class="checkbox-container checkbox-container--post">Salary
+            <label class="checkbox-container checkbox-container--post">Card
               <input v-model="form.salary" type="checkbox">
               <span class="checkbox-checkmark" />
             </label>
             <div v-show="form.salary" class="post__form--parent post-salary__group">
-              <div class="form-group__container">
-                <h4 class="form-group__input-name ">
-                  Currency
-                </h4>
-                <div class="select">
-                  <select v-model="form.currency">
-                    <option value="IDR">
-                      IDR
-                    </option>
-                    <option value="USD">
-                      USD
-                    </option>
-                  </select>
-                  <span class="focus" />
-                </div>
-              </div>
+              
               <div class="form-group__container">
                 <h4 class="form-group__input-name">
-                  Amount
+                  Compatible cards
                 </h4>
                 <div class="">
-                  <input v-model="form.salary_amount" class="form-group__input-text" placeholder="Give your best offer" type="number" min="0" step="500">
+                  <input v-model="form.salary_amount" class="form-group__input-text" placeholder="Give your best offer" type="number" min="0">
                 </div>
               </div>
 
-              <div class="form-group__container">
-                <h4 class="form-group__input-name">
-                  Payment Type
-                </h4>
-                <div class="select">
-                  <select v-model="form.payment_type">
-                    <option value="person">
-                      For Each Person
-                    </option>
-                    <option value="project">
-                      For Whole Project
-                    </option>
-                  </select>
-                  <span class="focus" />
-                </div>
-              </div>
+              
             </div>
             <has-error :form="form" field="salary_amount" />
           </div>
 
-          <label class="checkbox-container checkbox-container--post">Certificate
+          <label class="checkbox-container checkbox-container--post">Cash
             <input v-model="form.certificate" type="checkbox">
             <span class="checkbox-checkmark" />
           </label>

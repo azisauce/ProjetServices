@@ -227,7 +227,7 @@ export default {
         if (this.user.role === 'Lecturer') {
           return [
             
-            { route: { name: 'projectbox' }, text: 'Project Box', icon: 'simple-icons:polymerproject' }
+           
           ]
         }
 

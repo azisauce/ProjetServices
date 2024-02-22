@@ -8,10 +8,11 @@
       <div class="slide-1__container">
         <div class="slide-1__first-block ">
           <h2 class="slide-1__heading moveInTop duration--1">
-            Enhance <br>
-            Your Reach <br>
-            by Leveraging<br>
-            SwiftServe.
+            Simplify <br>
+            Your search <br>
+            for <br>
+            Services.
+
           </h2>
           <div v-if="$matchMedia.xl" class="slide-1__ornament">
             <img class="slide-1__triangle fadeIn duration--2" src="/images/triangle.svg" alt="">
@@ -22,9 +23,11 @@
             <img class="slide-1__right-dashed moveInBottomLeft duration--2" src="/images/right-dashed.svg" alt="">
           </div>
           <p class="slide-1__paragraph moveInTop duration--1_5">
-            Dive into the thrilling possibilities that SwiftServe adds to your experience </p>
+
+            Find the best for you
+          </p>
           <router-link :to="{ name: 'explore' }" class="slide-1__button moveInTop duration--2" tag="button">
-            <span>Get Started</span>
+            <span>Find here</span>
             <span class="iconify" data-icon="ion:arrow-forward-outline" />
           </router-link>
         </div>
@@ -47,12 +50,14 @@
         <h2 class="slide-2__heading">
           Discover The <br>
           Available <br>
+
           Professionals on <br>
           The Platform
         </h2>
         <p class="slide-2__paragraph">
           Staying updated on the active tasks listed on SwiftServe and the successfully completed ones will ignite your
           enthusiasm!
+
         </p>
         <div class="slide-2__facts">
           <div class="slide-2__fact-item">
@@ -61,7 +66,8 @@
               {{ projectByStatusCount.hiring }}
             </div>
             <div class="slide-2__fact--name">
-              Active Tasks
+
+              Available services
             </div>
           </div>
           <div class="slide-2__fact-item">
@@ -70,7 +76,8 @@
               {{ projectByStatusCount.ongoing }}
             </div>
             <div class="slide-2__fact--name">
-              Ongoing Tasks
+
+              Bad feedbacks
             </div>
           </div>
           <div class="slide-2__fact-item">
@@ -80,6 +87,7 @@
             </div>
             <div class="slide-2__fact--name">
               Finished Tasks
+
             </div>
           </div>
         </div>

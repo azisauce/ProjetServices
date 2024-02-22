@@ -19,9 +19,7 @@
           </h1>
         </div>
         <div class="project-details--action-button">
-          <router-link class="btn btn--blue btn--large" :to="{ name: applyRoute, params: { title: project.title , type: project.applicant_type } }" tag="button" :disabled="!isEligibleToApply">
-            Apply Project
-          </router-link>
+          
           <button v-debounce:300ms="toggleWishlist" :debounce-events="'click'" class="btn btn--white btn--large" :disabled="user && user.role === 'Lecturer'">
             <div v-show="project.is_wished && project.is_wished.status" class="flex">
               <span class="iconify" data-icon="ic:round-remove-circle-outline" width="24" height="24" />
@@ -41,9 +39,7 @@
 
       <div v-if="!$matchMedia.xl">
         <div v-if="project.status === 'Hiring'" class="project-details--action-button">
-          <router-link class="btn btn--blue btn--large" :to="{ name: applyRoute, params: { title: project.title , type: project.applicant_type } }" tag="button" :disabled="!isEligibleToApply" @click="nyoba">
-            Apply Project
-          </router-link>
+          
           <button v-debounce:400ms="toggleWishlist" class="btn btn--white btn--large" :disabled="user && user.role === 'Lecturer'" :debounce-events="'click'">
             <div v-show="project.is_wished && project.is_wished.status" class="flex">
               <span class="iconify" data-icon="ic:round-remove-circle-outline" width="24" height="24" />
@@ -104,15 +100,7 @@
                 -
               </p>
             </div>
-            <div class="project-skills">
-              <h3>Skills</h3>
-              <div v-if="project && project.skills && project.skills.length > 0" class="skills--container">
-                <BubbleSkill v-for="skill in project.skills" :key="skill.id" :color="bgBubble" :name="skill.name" />
-              </div>
-              <p v-else>
-                -
-              </p>
-            </div>
+            
           </div>
         </div>
         <div v-if="!$matchMedia.xl" class="project-summary">
@@ -146,36 +134,14 @@
           <div class="details__poster--info">
             <p><strong>Posted By</strong></p>
             <p>{{ project.user.full_name }}</p>
-            <p>NIP. {{ project.user.identity_number }}</p>
-            <p>{{ project.user.expertise }}</p>
+            
           </div>
         </div>
         <router-link :to="{ name: 'message', params: { tagname: project.user.tagname } }" class="btn btn--blue btn--large" tag="button" :disabled="isSelf">
-          Contact Lecturer
+          Contact the service offeror
         </router-link>
         <div v-if="$matchMedia.xl" class="project-summary">
-          <div class="details__share--container">
-            <h2 class="">
-              Share
-            </h2>
-            <div class="flex-row share__button--container">
-              <div class="details__share--button" @click="copyToClipboard">
-                <span class="iconify details__share--icon" data-icon="ic:round-link" />
-                <span>{{ copyText }}</span>
-              </div>
-              <ShareNetwork
-                v-for="network in networks" :key="network.network"
-                :class="`details__share--button`"
-                :network="network.network"
-                :url="sharing.url"
-                :title="sharing.title"
-                :description="sharing.description"
-              >
-                <span class="iconify details__share--icon" :data-icon="network.icon" />
-                <span>{{ network.name }}</span>
-              </ShareNetwork>
-            </div>
-          </div>
+          
 
           <div>
             <h2 class="summary--h2">
@@ -203,7 +169,7 @@
     <div v-if="$matchMedia.xl">
       <div class="desktop__other-projects">
         <h2 class="other-projects__h2">
-          Other Projects You Might Like
+          Other Services You Might Like
         </h2>
         <div class="project--container">
           <content-placeholders

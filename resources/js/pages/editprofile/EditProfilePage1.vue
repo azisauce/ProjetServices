@@ -40,50 +40,29 @@
           </div>
         </div>
 
-        <div class="form-group__container">
-          <h4 class="form-group__input-name">
-            Status
-          </h4>
-          <div class="">
-            <input v-model="form.user.role" class="form-group__input-text" disabled>
-          </div>
-        </div>
+       
 
         <div class="form-group__container">
           <h4 class="form-group__input-name">
-            {{ form.user.role }} ID Number
+             ID Number
           </h4>
           <div class="">
             <input v-model="form.user.identity_number" class="form-group__input-text" placeholder="e.g., 205150200111042">
           </div>
         </div>
 
-        <div class="form-group__container">
-          <h4 class="form-group__input-name">
-            University
-          </h4>
-          <div class="">
-            <input v-model="form.user.university" class="form-group__input-text" placeholder="e.g., University of Brawijaya">
-          </div>
-        </div>
+        
 
         <div class="form-group__container">
           <h4 class="form-group__input-name">
-            Faculty
+            Function
           </h4>
           <div class="">
             <input v-model="form.user.faculty" class="form-group__input-text" placeholder="e.g., Faculty of Computer Science">
           </div>
         </div>
 
-        <div class="form-group__container">
-          <h4 class="form-group__input-name">
-            Major
-          </h4>
-          <div class="">
-            <input v-model="form.user.major" class="form-group__input-text" placeholder="e.g., Informatics Engineering">
-          </div>
-        </div>
+        
 
         <div class="form-group__container">
           <h4 class="form-group__input-name">
@@ -153,10 +132,6 @@
         </div>
 
         <div class="mb-1_5 mt-5 edit-profile__buttons">
-          <router-link :to="{ name: 'editprofile.page2' }" class="edit-profile__link btn btn--grey">
-            Next
-          </router-link>
-
           <v-button :loading="form.busy" class="btn btn--blue">
             Save Changes
           </v-button>

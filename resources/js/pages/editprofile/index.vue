@@ -1,6 +1,6 @@
 <template>
   <div class="edit-profile__container">
-    <TopImage :type="1" />
+    
 
     <div>
       <transition name="fade" mode="out-in">

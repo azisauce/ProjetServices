@@ -10,17 +10,7 @@
         </p>
       </div>
 
-      <div class="info__sub--container">
-        <h3 class="info__h3">
-          Skills
-        </h3>
-        <div class="info__skill-container">
-          <BubbleSkill v-for="(skill, index) in user.skills" :key="`UserSkill-${index}`" :color="bgBubble" :name="skill.name" />
-          <p v-show="user.skills.length === 0" class="info__p margin-0_5">
-            No skills to show yet
-          </p>
-        </div>
-      </div>
+      
 
       <div v-if="!$matchMedia.xl" class="info__sub--container">
         <h3 class="info__h3">
@@ -33,18 +23,6 @@
               <span v-else class="summary--text-icon">{{ record.icon }}</span>
             </div> {{ record.content }}
           </div>
-        </div>
-      </div>
-
-      <div class="info__sub--container">
-        <h3 class="info__h3">
-          Experience
-        </h3>
-        <div class="mb-2 experiences-list">
-          <ExperienceItem v-for="(experience, index) in user.experiences" :key="`ExperienceItem-${index}`" :data="experience" />
-          <p v-show="user.experiences.length === 0" class="info__p">
-            No experiences to show yet
-          </p>
         </div>
       </div>
     </div>

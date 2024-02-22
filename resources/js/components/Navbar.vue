@@ -226,15 +226,13 @@ export default {
       if (this.user) {
         if (this.user.role === 'Lecturer') {
           return [
-            { route: { name: 'project.post' }, text: 'Post Project', icon: 'ic:baseline-post-add' },
-            { route: { name: 'inbox' }, text: 'Inbox', icon: 'ion:mail-unread-sharp' },
+            
             { route: { name: 'projectbox' }, text: 'Project Box', icon: 'simple-icons:polymerproject' }
           ]
         }
 
         return [
-          { route: { name: 'party.leader' }, text: 'Party', icon: 'carbon:3rd-party-connected' },
-          { route: { name: 'inbox' }, text: 'Inbox', icon: 'ion:mail-unread-sharp' },
+          
           { route: { name: 'projectbox' }, text: 'Project Box', icon: 'simple-icons:polymerproject' }
         ]
       }

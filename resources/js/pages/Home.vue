@@ -7,10 +7,10 @@
       <div class="slide-1__container">
         <div class="slide-1__first-block ">
           <h2 class="slide-1__heading moveInTop duration--1">
-            Expand <br>
-            Your Career <br>
-            by Doing <br>
-            Project.
+            Simplify <br>
+            Your search <br>
+            for <br>
+            Services.
           </h2>
           <div v-if="$matchMedia.xl" class="slide-1__ornament">
             <img class="slide-1__triangle fadeIn duration--2" src="/images/triangle.svg" alt="">
@@ -21,10 +21,10 @@
             <img class="slide-1__right-dashed moveInBottomLeft duration--2" src="/images/right-dashed.svg" alt="">
           </div>
           <p class="slide-1__paragraph moveInTop duration--1_5">
-            Fill up your college life with expectation
+            Find the best for you
           </p>
           <router-link :to="{ name: 'explore' }" class="slide-1__button moveInTop duration--2" tag="button">
-            <span>Get Started</span>
+            <span>Find here</span>
             <span class="iconify" data-icon="ion:arrow-forward-outline" />
           </router-link>
         </div>
@@ -47,11 +47,11 @@
         <h2 class="slide-2__heading">
           See The <br>
           Available <br>
-          Project on <br>
+          Services on <br>
           The Platform
         </h2>
         <p class="slide-2__paragraph">
-          Knowing the available project that currently posted on the website and the finished project will determine your spirit!
+          Knowing the available services that currently posted on the website and the offered services will currently help!
         </p>
         <div class="slide-2__facts">
           <div class="slide-2__fact-item">
@@ -60,7 +60,7 @@
               {{ projectByStatusCount.hiring }}
             </div>
             <div class="slide-2__fact--name">
-              Active Projects
+              Available services
             </div>
           </div>
           <div class="slide-2__fact-item">
@@ -69,7 +69,7 @@
               {{ projectByStatusCount.ongoing }}
             </div>
             <div class="slide-2__fact--name">
-              Ongoing Projects
+              Bad feedbacks
             </div>
           </div>
           <div class="slide-2__fact-item">
@@ -78,7 +78,7 @@
               {{ projectByStatusCount.finished }}
             </div>
             <div class="slide-2__fact--name">
-              Finished Projects
+              Disliked projects
             </div>
           </div>
         </div>

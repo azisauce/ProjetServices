@@ -1,7 +1,7 @@
 <template>
   <div class="inbox__container">
     <h2 v-if="$matchMedia.xl" class="desktop-inbox__heading">
-      Project Box
+      Services Box
     </h2>
     <div class="inbox__body--container">
       <div class="inbox__info--container">
@@ -10,17 +10,7 @@
           <p class="inbox__info--name">
             {{ user.full_name }}
           </p>
-          <p class="inbox__info--occupation">
-            {{ user.major }}<br>
-            {{ user.university }} <br>
-            {{ user.location }}
-          </p>
-          <p v-if="!$matchMedia.xl" class="inbox__info--expertise">
-            <span class="iconify inbox__info--expertise-icon" data-icon="fa-solid:paint-brush" /> {{ user.expertise }}
-          </p>
-          <p v-else class="inbox__info--expertise">
-            {{ user.expertise }}
-          </p>
+          
 
           <p v-if="user.role === 'Student'" class="inbox__info--available">
             <span class="iconify inbox__info--expertise-icon" data-icon="carbon:dot-mark" />
@@ -38,15 +28,10 @@
         <div class="explore__main--container mb-0">
           <div class="inbox--top-left">
             <span class="iconify inbox--left-icon" data-icon="simple-icons:polymerproject" /> <h2 class="inbox--heading">
-              Project Box
+              Services Box
             </h2>
           </div>
-          <button class="btn--clear flex-center" @click="toggleFilter">
-            <div class="icon">
-              <span class="iconify" data-icon="ic:round-filter-list" height="24" width="24" />
-              <span v-if="$matchMedia.xl">Filters</span>
-            </div>
-          </button>
+
         </div>
 
         <div v-show="showFilter && $matchMedia.xl" class="explore--filter mb-1_5 ">
@@ -133,7 +118,7 @@ export default {
     isNoProject () {
       if (this.projectBoxes.length === 0) {
         if (this.selected) return 'There are no projects to be handled yet with this criteria'
-        else return 'There are no projects to be handled yet'
+        else return 'There are no services you asked for yet'
       }
 
       return ''

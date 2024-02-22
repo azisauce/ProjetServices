@@ -24,7 +24,7 @@
 
     <div class="resgiter-form--container">
       <router-link v-if="$matchMedia.xl" :to="{ name: 'index' }" class="mx-auto mb-1">
-        <img class="desktop-nav__logo" src="/images/logo-blue.svg" alt="">
+        <h3>SwiftServe</h3>
       </router-link>
 
       <h1 class="login--h1">
@@ -41,7 +41,8 @@
         </div>
       </div>
 
-      <div v-if="!$matchMedia.xl" class="role--choose-effect" :class="{ 'role--student': studentRole, 'role--lecturer': lecturerRole }" />
+      <div v-if="!$matchMedia.xl" class="role--choose-effect"
+        :class="{ 'role--student': studentRole, 'role--lecturer': lecturerRole }" />
       <div v-else class="separator mt-1_5 mb-2">
         Sign Up
       </div>
@@ -53,7 +54,8 @@
               First Name
             </h4>
             <div class="">
-              <input v-model="form.first_name" :class="{ 'is-invalid': form.errors.has('first_name') }" class="form-group__input-text" type="text" name="first_name" placeholder="e.g., John" required>
+              <input v-model="form.first_name" :class="{ 'is-invalid': form.errors.has('first_name') }"
+                class="form-group__input-text" type="text" name="first_name" placeholder="e.g., John" required>
               <has-error :form="form" field="first_name" />
             </div>
           </div>
@@ -63,7 +65,8 @@
               Last Name
             </h4>
             <div class="">
-              <input v-model="form.last_name" :class="{ 'is-invalid': form.errors.has('last_name') }" class="form-group__input-text" type="text" name="last_name" placeholder="e.g., Doe" required>
+              <input v-model="form.last_name" :class="{ 'is-invalid': form.errors.has('last_name') }"
+                class="form-group__input-text" type="text" name="last_name" placeholder="e.g., Doe" required>
               <has-error :form="form" field="last_name" />
             </div>
           </div>
@@ -74,7 +77,8 @@
             Email
           </h4>
           <div class="">
-            <input v-model="form.email" :class="{ 'is-invalid': form.errors.has('email') }" class="form-group__input-text" type="email" name="email" placeholder="e.g., johndoe@example.ac.id" autocomplete="username" required>
+            <input v-model="form.email" :class="{ 'is-invalid': form.errors.has('email') }" class="form-group__input-text"
+              type="email" name="email" placeholder="e.g., johndoe@example.ac.id" autocomplete="username" required>
             <p v-if="form.role === 'Student'" class="form-group__input-info">
               You can use letters, numbers & periods
             </p>
@@ -94,7 +98,9 @@
           <div class="">
             <div class="login-input--container">
               <div class="right-tag__group">
-                <input v-model="form.password" :class="{ 'is-invalid': form.errors.has('password') }" class="right-tag__input right-tag__input--form" :type="passwordType" name="password" placeholder="e.g., th!51sjh0nD03N0tj@n3D03" autocomplete="current-password" required>
+                <input v-model="form.password" :class="{ 'is-invalid': form.errors.has('password') }"
+                  class="right-tag__input right-tag__input--form" :type="passwordType" name="password"
+                  placeholder="e.g., th!51sjh0nD03N0tj@n3D03" autocomplete="current-password" required>
                 <div v-show="hidePassword" class="pointer right-tag" @click="togglePassword">
                   <span class="iconify password__hide-icon" data-icon="carbon:view-off-filled" width="20" height="20" />
                 </div>
@@ -127,7 +133,7 @@
           </router-link>
         </p>
       </div>
-      
+
     </div>
   </div>
 </template>
@@ -141,7 +147,7 @@ export default {
   layout: 'wide',
   middleware: 'guest',
 
-  metaInfo () { return { title: 'Sign Up' } },
+  metaInfo() { return { title: 'Sign Up' } },
 
   data: () => ({
     studentRole: false,
@@ -160,7 +166,7 @@ export default {
   }),
 
   computed: {
-    role () {
+    role() {
       if (this.form.role === 'Student') {
         return {
           img: {
@@ -194,7 +200,7 @@ export default {
   },
 
   methods: {
-    async register () {
+    async register() {
       // Register the user.
       const { data } = await this.form.post('/api/register')
 
@@ -217,17 +223,17 @@ export default {
         this.$router.push({ name: 'index' })
       }
     },
-    chooseStudent () {
+    chooseStudent() {
       this.studentRole = true
       this.lecturerRole = false
       this.form.role = 'Student'
     },
-    chooseLecturer () {
+    chooseLecturer() {
       this.lecturerRole = true
       this.studentRole = false
       this.form.role = 'Lecturer'
     },
-    togglePassword () {
+    togglePassword() {
       this.hidePassword = !this.hidePassword
       this.passwordType = this.hidePassword ? 'password' : 'text'
     }

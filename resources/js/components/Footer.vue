@@ -2,13 +2,14 @@
   <footer class="footer">
     <div class="footer__container">
       <div class="footer__description">
-        <img src="/images/footer-logo.svg" alt="">
+
         <p v-if="$matchMedia.xl">
           &copy; 2024
         </p>
         <p v-if="$matchMedia.xl">
-          Making the world easier is our main goal, our values is degitalize the process of searching for help.
-        </p>
+          With SwiftServe, everyone will be connected online! Our web application serves as the bridge between clients
+          and repair service providers, streamlining the process of service requests and interventions for an optimal user
+          experience </p>
       </div>
 
       <div class="footer__right">
@@ -16,33 +17,31 @@
           <div class="footer-nav__section">
             <div class="footer-nav__menu">
               <div class="flex-row space-between w-100">
-                <span>Company</span>
+                <span>Our Team</span>
                 <div v-if="!$matchMedia.xl">
                   <span class="iconify footer-nav__icon" data-icon="entypo:chevron-small-down" />
                 </div>
               </div>
               <div v-if="$matchMedia.xl" class="footer-nav__menu--items">
-                <div>About Us</div>
-                <div>Careers</div>
-                <div>Contact Us</div>
+                <div>Marwen Rhaiem</div>
+                <div>Mohamed Aziz Turki</div>
+                <div>Arij Ezzahi</div>
+                <div>Baha Ben Slema </div>
+                <div>Ghada ElAmri</div>
+                <div>Adam Ben Hassan </div>
               </div>
             </div>
             <div class="footer-nav__menu">
               <div class="flex-row space-between w-100">
-                <span>Team</span>
+                <span>Further Information</span>
                 <div v-show="!$matchMedia.xl">
                   <span class="iconify footer-nav__icon" data-icon="entypo:chevron-small-down" />
                 </div>
               </div>
               <div v-show="$matchMedia.xl" class="footer-nav__menu--items">
-                <div>Amri Ghada</div>
-                <div>Ben Hassen Adem
+                <div>Terms & Conditions</div>
+                <div>Privacy Policy</div>
               </div>
-                <div>Ben Slama Baha</div>
-                <div>Ezzahi Arij</div>
-                <div>Rhaiem Marwen</div>
-                <div>Turki Aziz</div>
-
             </div>
           </div>
           <div class="footer-icon__section">
@@ -64,8 +63,7 @@
           </div>
         </div>
 
-        
-      </div>
+
       </div>
     </div>
   </footer>
@@ -87,7 +85,7 @@ export default {
     })
   },
 
-  mounted () {
+  mounted() {
     // this.getWishlist()
   },
 

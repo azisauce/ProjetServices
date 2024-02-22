@@ -4,11 +4,12 @@
       <div class="flex-row desktop-nav__container">
         <div class="flex-row">
           <router-link :to="{ name: 'index' }">
-            <img class="desktop-nav__logo" src="/images/logo-blue.svg" alt="">
+            <h3> SwiftServe </h3>
           </router-link>
 
           <div class="desktop-nav__link--container">
-            <router-link v-for="(menu, index) in leftMenu" :key="`LeftMenu-${index}`" :to="menu.route" class="desktop-nav__link " active-class="desktop-nav__active-link">
+            <router-link v-for="(menu, index) in leftMenu" :key="`LeftMenu-${index}`" :to="menu.route"
+              class="desktop-nav__link " active-class="desktop-nav__active-link">
               <span>{{ menu.text }}</span>
             </router-link>
           </div>
@@ -18,13 +19,15 @@
 
           <div v-if="user" class="flex-row desktop-nav__right-container">
             <div class="desktop-nav__right-icon">
-              <router-link v-for="menu in rightMenu" :key="`RightMenu-${menu.icon}`" :to="menu.route" class="desktop-nav__link">
+              <router-link v-for="menu in rightMenu" :key="`RightMenu-${menu.icon}`" :to="menu.route"
+                class="desktop-nav__link">
                 <Icon :refs="menu.route" :icon="menu.icon" :width="20" :height="20" />
                 <!-- <span class="iconify" :data-icon="menu.icon" width="20" height="20" /> -->
                 <span class="tooltip">{{ menu.text }}</span>
               </router-link>
 
-              <div class="desktop-nav__right-icon dropdown" :class="{ 'dropdown-hover': dropdown.state }" @mouseover="toggleDropdown(true)" @mouseleave="toggleDropdown(false)">
+              <div class="desktop-nav__right-icon dropdown" :class="{ 'dropdown-hover': dropdown.state }"
+                @mouseover="toggleDropdown(true)" @mouseleave="toggleDropdown(false)">
                 <router-link :to="{ name: 'profile.projects' }" class="flex">
                   <img class="nav--profile-img" :src="user.avatar" alt="">
                 </router-link>
@@ -83,9 +86,11 @@
         <div class="nav-stabilizer" />
       </div>
 
-      <div class="nav--overlay" :class="{ 'nav--overlay-open': menu.show, 'nav--overlay-close': menu.hide }" @click="closeMenu" />
+      <div class="nav--overlay" :class="{ 'nav--overlay-open': menu.show, 'nav--overlay-close': menu.hide }"
+        @click="closeMenu" />
 
-      <nav v-touch:swipe.left="closeMenu" class="navbar" :class="{ 'nav--animate-open': menu.show, 'nav--animate-close': menu.hide }">
+      <nav v-touch:swipe.left="closeMenu" class="navbar"
+        :class="{ 'nav--animate-open': menu.show, 'nav--animate-close': menu.hide }">
         <div class="navbar--menu-container">
           <div class="nav--top">
             <button class="nav-toggler btn--clear flex" @click="closeMenu">
@@ -118,7 +123,8 @@
                 </p>
               </div>
             </div>
-            <router-link :to="{ name: 'profile.projects' }" class="nav--profile-link" active-class="nav--profile-link-active">
+            <router-link :to="{ name: 'profile.projects' }" class="nav--profile-link"
+              active-class="nav--profile-link-active">
               View Profile
             </router-link>
           </div>
@@ -132,7 +138,8 @@
           <div class="nav-separator" />
 
           <div class="nav-group">
-            <router-link v-for="(menu, index) in leftMenu" :key="`RightMenu-${index}`" :to="menu.route" class="nav-link" active-class="nav--active-link">
+            <router-link v-for="(menu, index) in leftMenu" :key="`RightMenu-${index}`" :to="menu.route" class="nav-link"
+              active-class="nav--active-link">
               <span class="iconify" :data-icon="menu.icon" width="20" height="20" />
               <span>{{ menu.text }} </span>
             </router-link>
@@ -143,7 +150,8 @@
           <!-- Authenticated -->
           <div v-show="user">
             <div class="nav-group">
-              <router-link v-for="(menu, index) in rightMenu" :key="`RightMenu-${index}`" :to="menu.route" class="nav-link" active-class="nav--active-link">
+              <router-link v-for="(menu, index) in rightMenu" :key="`RightMenu-${index}`" :to="menu.route"
+                class="nav-link" active-class="nav--active-link">
                 <span class="iconify" :data-icon="menu.icon" width="20" height="20" />
                 <span>{{ menu.text }} </span>
               </router-link>
@@ -201,13 +209,13 @@ export default {
       snackbar: 'notification/snackbar'
     }),
 
-    title () {
+    title() {
       if (this.$route.params.tagname) return this.navTitle
       if (this.$route.meta.title) return this.$route.meta.title
       else return null
     },
 
-    points () {
+    points() {
       if (this.user && this.user.leaderboards) {
         return this.user.leaderboards.filter(e => e.expertise === this.user.expertise)[0].points + ' Points'
       }
@@ -215,14 +223,14 @@ export default {
       return 0
     },
 
-    leftMenu () {
+    leftMenu() {
       return [
         { route: { name: 'explore' }, text: 'Explore', icon: 'eva:globe-2-fill' },
-        { route: { name: 'leaderboard' }, text: 'Leaderboard', icon: 'gridicons:stats-up-alt' }
+
       ]
     },
 
-    rightMenu () {
+    rightMenu() {
       if (this.user) {
         if (this.user.role === 'Lecturer') {
           return [
@@ -247,12 +255,12 @@ export default {
   },
 
   watch: {
-    $route (to, from) {
+    $route(to, from) {
       if (this.menu.show) this.closeMenu()
     }
   },
 
-  mounted () {
+  mounted() {
     if (this.user && this.user.new_notifications_count > 0) {
       this.$nextTick(function () {
         setTimeout(() => {
@@ -263,12 +271,12 @@ export default {
   },
 
   methods: {
-    openMenu () {
+    openMenu() {
       this.menu.show = true
       this.menu.hide = false
     },
 
-    closeMenu () {
+    closeMenu() {
       if (this.menu.show === false && this.menu.hide === false) {
       } else {
         this.menu.show = false
@@ -276,7 +284,7 @@ export default {
       }
     },
 
-    toggleDropdown (isHover) {
+    toggleDropdown(isHover) {
       if (isHover) {
         clearTimeout(this.dropdown.timeout)
         this.dropdown.state = true
@@ -287,7 +295,7 @@ export default {
       }
     },
 
-    async logout () {
+    async logout() {
       await this.$store.dispatch('auth/logout')
 
       if (this.$route.path !== '/') this.$router.push({ name: 'index' })

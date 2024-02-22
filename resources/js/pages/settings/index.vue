@@ -1,6 +1,6 @@
 <template>
   <div class="settings__container">
-    <TopImage :type="1" />
+
 
     <div class="settings-form--container">
       <form @submit.prevent="update" @keydown="form.onKeydown($event)">
@@ -15,7 +15,8 @@
         </div>
 
         <div class="login-input--container">
-          <input v-model="form.password_confirmation" class="login-input" placeholder="Re-Type New Password" type="password" required>
+          <input v-model="form.password_confirmation" class="login-input" placeholder="Re-Type New Password"
+            type="password" required>
           <has-error :form="form" field="password_confirmation" />
         </div>
 
@@ -36,7 +37,7 @@ export default {
 
   middleware: ['auth'],
 
-  metaInfo () { return { title: 'Settings' } },
+  metaInfo() { return { title: 'Settings' } },
 
   data: () => ({
     form: new Form({
@@ -52,7 +53,7 @@ export default {
   },
 
   methods: {
-    async update () {
+    async update() {
       this.form.patch('/api/settings/password')
         .then(response => {
           this.snackbar.open('Password has been changed')

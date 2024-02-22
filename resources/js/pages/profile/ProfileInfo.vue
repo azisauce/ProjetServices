@@ -196,21 +196,15 @@ export default {
       if (this.user.role === 'Student') {
         return [
           { 'icon': 'bx:bxs-id-card', 'content': this.user.identity_number, 'type': 'icon' },
-          { 'icon': 'Pts', 'content': `${this.theStudentHighestPoints} Points Collected`, 'type': 'not-icon' },
-          { 'icon': 'LVL', 'content': this.level, 'type': 'not-icon' },
-          { 'icon': 'fa-solid:building', 'content': `${this.user.faculty}, ${this.user.university}`, 'type': 'icon' },
           { 'icon': 'ic:baseline-card-membership', 'content': `Joined since ${timeago.format(this.user.joined_since)}`, 'type': 'icon' },
-          { 'icon': 'icons8:finish-flag', 'content': `${this.user.finished_project_count} Finished Project`, 'type': 'icon' },
-          { 'icon': 'entypo:squared-cross', 'content': '0 Failed Project', 'type': 'icon' }
+
         ]
       }
 
       return [
         { 'icon': 'bx:bxs-id-card', 'content': this.user.identity_number, 'type': 'icon' },
-        { 'icon': 'fa-solid:building', 'content': `${this.user.faculty}, ${this.user.university}`, 'type': 'icon' },
         { 'icon': 'ic:baseline-card-membership', 'content': `Joined since ${timeago.format(this.user.joined_since)}`, 'type': 'icon' },
-        { 'icon': 'dashicons-admin-post', 'content': `${this.projects ? this.projects.length : 0} Project Posted`, 'type': 'icon' },
-        { 'icon': 'entypo:squared-cross', 'content': '0 Failed Project', 'type': 'icon' }
+
       ]
     },
 

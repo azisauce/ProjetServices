@@ -1,13 +1,6 @@
 <template>
   <div>
-    <div class="project--container">
-      <ProjectCard v-for="project in projects" :key="`project-${project.id}`"
-                   :data="project"
-      />
-      <p v-if="projects.length === 0" class="info__p">
-        Let fill this page with some projects
-      </p>
-    </div>
+    Go to infos
   </div>
 </template>
 

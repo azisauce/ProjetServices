@@ -7,17 +7,13 @@
           {{ user.full_name }}
         </p>
         <p v-if="!$matchMedia.xl" class="profile__info--occupation">
-          {{ major }} <br>
-          {{ user.university }} <br>
           {{ user.location }}
         </p>
         <p v-else class="profile__info--occupation">
-          {{ major }} / {{ user.university }} <br>
+    
           {{ user.location }}
         </p>
-        <p class="profile__info--expertise">
-          <span class="iconify" data-icon="fa-solid:paint-brush" width="15" height="10" /> {{ user.expertise }}
-        </p>
+        
 
         <div v-if="$matchMedia.xl" class="profile__info--buttons">
           <router-link :to="{ path: '/profile/edit' }" class="profile__info--edit-profile" tag="button">
@@ -86,14 +82,14 @@ export default {
     tabs () {
       if (this.user.role === 'Student') {
         return [
-          { name: 'Projects', route: 'profile.projects' },
+          
           { name: 'Wishlist', route: 'profile.wishlist' },
           { name: 'Info', route: 'profile.info' }
         ]
       }
 
       return [
-        { name: 'Projects', route: 'profile.projects' },
+        
         { name: 'Info', route: 'profile.info' }
       ]
     },

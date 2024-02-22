@@ -112,7 +112,7 @@ export default {
     return {
       title: 'Home',
       meta: [
-        { name: 'description', content: 'PHive: Freelancer Platform for Students. Expand your career by doing projects.' }
+        { name: 'description', content: 'SwiftServe' }
       ]
     }
   },
@@ -137,13 +137,18 @@ export default {
     this.$nextTick(function () {
       document.querySelector('.desktop-nav', '.nav-base').style.boxShadow = 'unset'
       let app = document.querySelector('html')
+      document.title = "SwiftServe"
       window.onscroll = () => {
         clearTimeout(this.debouncedScroll)
         this.debouncedScroll = setTimeout(() => {
           if (app.scrollTop > 0) {
             document.querySelector('.desktop-nav', '.nav-base').style.boxShadow = '0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.1)'
+            document.title = "SwiftServe"
+
           } else {
             document.querySelector('.desktop-nav', '.nav-base').style.boxShadow = 'unset'
+            document.title = "SwiftServe"
+
           }
         }, 50)
       }

@@ -7,20 +7,15 @@
 
       <div class="explore__search--container">
         <div class="form-tag__group explore__search--form">
-          <input
-            v-if="$matchMedia.xl" v-model="query" type="search"
-            class="form-tag__input"
-            placeholder="Search by Service Name"
-            @keyup.enter="search"
-          >
-          <input
-            v-else v-model="query" type="search"
-            class="form-tag__input"
-            placeholder="Explore by projects" @change="search"
-          >
-          <label for="form.user.tagname" class="form-tag"><span class="iconify" data-icon="ic:round-search" width="30" height="30" /></label>
+          <input v-if="$matchMedia.xl" v-model="query" type="search" class="form-tag__input"
+            placeholder="Search by Service Name" @keyup.enter="search">
+          <input v-else v-model="query" type="search" class="form-tag__input" placeholder="Explore by projects"
+            @change="search">
+          <label for="form.user.tagname" class="form-tag"><span class="iconify" data-icon="ic:round-search" width="30"
+              height="30" /></label>
         </div>
-        <button v-if="$matchMedia.xl" v-debounce:600ms="search" :debounce-events="'click'" class="btn explore__search--button ml-1" :disabled="query.length === 0">
+        <button v-if="$matchMedia.xl" v-debounce:600ms="search" :debounce-events="'click'"
+          class="btn explore__search--button ml-1" :disabled="query.length === 0">
           Explore
         </button>
       </div>
@@ -56,7 +51,9 @@
         </div>
 
         <div class="checkbox-group--filters">
-          <label v-for="expertise in filters.expertises" :key="`filter-${expertise.name}`" class="checkbox-container checkbox-container--post checkbox-container--filters space-between">{{ expertise.name }}
+          <label v-for="expertise in filters.expertises" :key="`filter-${expertise.name}`"
+            class="checkbox-container checkbox-container--post checkbox-container--filters space-between">{{
+              expertise.name }}
             <input v-model="expertise.isChecked" type="checkbox" @change="filterProjects">
             <span class="checkbox-checkmark " />
             <p class="text-bold">({{ expertise.count }})</p>
@@ -98,7 +95,8 @@
         </div>
         <div class="flex-row checkbox-group--filter">
           <div v-for="expertise in filters.expertises" :key="`filter-${expertise.name}`" class="checkbox-container pl-0">
-            <input :id="`filter-${expertise.name}`" v-model="expertise.isChecked" type="checkbox" @change="filterProjects">
+            <input :id="`filter-${expertise.name}`" v-model="expertise.isChecked" type="checkbox"
+              @change="filterProjects">
             <label :for="`filter-${expertise.name}`" class="checkbox-checkmark--filter">{{ expertise.name }}</label>
           </div>
         </div>
@@ -118,12 +116,8 @@
 
     <div class="project--container">
       <template v-if="loading">
-        <content-placeholders
-          v-for="i in 9"
-          :key="`placeholder-${i}`"
-          class="content-placeholders-container"
-          :rounded="true"
-        >
+        <content-placeholders v-for="i in 9" :key="`placeholder-${i}`" class="content-placeholders-container"
+          :rounded="true">
           <content-placeholders-img />
           <content-placeholders-heading />
         </content-placeholders>
@@ -149,11 +143,11 @@ export default {
 
   components: { ProjectCard },
 
-  metaInfo () {
+  metaInfo() {
     return {
       title: 'Explore',
       meta: [
-        { name: 'description', content: 'PHive Explore: Search the latest posted projects for you to apply or peek up the best projects that have been finished.' }
+        { name: 'description', content: 'SwiftServe' }
       ]
     }
   },
@@ -201,7 +195,7 @@ export default {
     }
   },
 
-  mounted () {
+  mounted() {
     if (this.$route.query.query) {
       this.query = this.$route.query.query
       this.searchQuery()
@@ -220,14 +214,14 @@ export default {
     }
   },
 
-  beforeDestroy  () {
+  beforeDestroy() {
     window.onscroll = null
     clearTimeout(this.debounceAutoMore)
   },
 
   methods: {
 
-    async search () {
+    async search() {
       if (this.query !== this.$route.query.search) {
         this.$router.push({ name: 'explore', query: { search: this.query } })
         this.page = 1
@@ -235,7 +229,7 @@ export default {
       }
     },
 
-    async searchQuery () {
+    async searchQuery() {
       await axios.get('/api/projects/search?page=' + this.page, {
         params: {
           query: this.query
@@ -253,7 +247,7 @@ export default {
         })
     },
 
-    async getAll () {
+    async getAll() {
       await axios.get('/api/projects?page=' + this.page)
         .then(response => {
           this.loading = false
@@ -266,7 +260,7 @@ export default {
         })
     },
 
-    async loadMore () {
+    async loadMore() {
       let api = ''
 
       if (this.$route.query) {
@@ -284,12 +278,12 @@ export default {
         })
     },
 
-    toggleFilter () {
+    toggleFilter() {
       this.showFilter = !this.showFilter
       if (!this.$matchMedia.xl) this.$refs.filtersModal.openModal()
     },
 
-    async filterProjects () {
+    async filterProjects() {
       let filteredProjects = [...this.beforeFilterProjects]
 
       for (const i in this.filters.expertises) {
@@ -316,7 +310,7 @@ export default {
       this.countProject()
     },
 
-    clearFilter () {
+    clearFilter() {
       for (const i in this.filters.expertises) {
         this.filters.expertises[i].isChecked = false
       }
@@ -327,7 +321,7 @@ export default {
       this.projects = [...this.beforeFilterProjects]
     },
 
-    async countProject () {
+    async countProject() {
       let counter = {
         expertises: [...this.filters.expertises]
       }
@@ -344,7 +338,7 @@ export default {
       this.filters.expertises = counter.expertises
     },
 
-    orderProjects () {
+    orderProjects() {
       const hiringProjects = this.beforeFilterProjects.filter(project => project.status === 'Hiring')
       const ongoingProjects = this.beforeFilterProjects.filter(project => project.status === 'Ongoing')
       const finishedProjects = this.beforeFilterProjects.filter(project => project.status === 'Finished')

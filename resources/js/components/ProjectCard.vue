@@ -33,11 +33,13 @@
               <div class="project-card__extra-info">
                 <div>&bull; Posted {{ getHumanDate(project.created_at) }}</div>
               </div>
-              <button v-if="$matchMedia.xl && (!user || user.role === 'Student' )" class="btn--clear" @click="showWishlist">
+              <button v-if="$matchMedia.xl && (!user || user.role === 'Student')" class="btn--clear"
+                @click="showWishlist">
                 <span class="iconify project-card__wish" data-icon="mdi:dots-horizontal" width="22" />
               </button>
               <div v-show="showWish" class="card-wish__container">
-                <button v-debounce:400ms="toggleWishlist" class="btn btn--clear card-wish__button" :debounce-events="'click'">
+                <button v-debounce:400ms="toggleWishlist" class="btn btn--clear card-wish__button"
+                  :debounce-events="'click'">
                   {{ wishText }}
                 </button>
               </div>
@@ -73,7 +75,7 @@ export default {
       snackbar: 'notification/snackbar'
     }),
 
-    expertiseIn () {
+    expertiseIn() {
       const expertises = [
         { name: 'UI/UX Designer', isRequired: this.project.ui_ux_designer },
         { name: 'Frontend Engineer', isRequired: this.project.front_end_engineer },
@@ -88,7 +90,7 @@ export default {
       return expertises
     },
 
-    rewards () {
+    rewards() {
       return this.getRewards({
         salary: this.project.salary,
         currency: this.project.currency,
@@ -99,13 +101,13 @@ export default {
       })
     },
 
-    project () {
+    project() {
       if (this.data.project) return this.data.project
 
       return this.data
     },
 
-    wishText () {
+    wishText() {
       if (this.project.is_wished && this.project.is_wished.status) {
         return 'Remove from Wishlist'
       }
@@ -128,11 +130,11 @@ export default {
       return timeago.format(date)
     },
 
-    showWishlist () {
+    showWishlist() {
       this.showWish = !this.showWish
     },
 
-    async toggleWishlist () {
+    async toggleWishlist() {
       const isWished = this.project.is_wished && this.project.is_wished.status
 
       await axios.post(`/api/project/${this.project.project_url}/wishlist`, {

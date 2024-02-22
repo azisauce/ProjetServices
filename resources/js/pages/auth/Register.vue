@@ -5,24 +5,9 @@
         <img src="/images/logo.svg" alt="">
       </router-link>
     </div>
-    <div v-else class="desktop-login__left--container">
-      <div>
-        <img :src="role.img.top" alt="" class="desktop-register__left--img desktop-register__left-top--img">
-      </div>
-      <div class="flex-row space-between mt-1_5" :class="role.class.midImage">
-        <div class="flex-column space-between h100">
-          <img :src="role.img.midLeft" alt="" class="desktop-register__left--img desktop-register__left-mid-small--img">
-        </div>
-        <img :src="role.img.midRight" alt="" class="desktop-register__left--img desktop-register__left-mid-big--img ">
-      </div>
-      <div>
-        <h2 class="desktop-login__left--h2 mt-1_5">
-          {{ role.text }}
-        </h2>
-      </div>
-    </div>
 
-    <div class="resgiter-form--container">
+
+    <div class="resgiter-form--container" style="margin: auto;">
       <div class="desktop-nav__link--container" style="justify-content: center;">
         <router-link :to="{ name: 'index' }" class="desktop-nav__link" active-class="desktop-nav__active-link">
           <span class="nav-title">SwiftServe</span>

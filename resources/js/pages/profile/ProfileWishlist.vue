@@ -1,11 +1,9 @@
 <template>
   <div>
     <div class="project--container">
-      <ProjectCard v-for="project in wishlists" :key="project.id"
-                   :data="project"
-      />
+      <ProjectCard v-for="project in wishlists" :key="project.id" :data="project" />
       <p v-if="wishlists.length === 0" class="info__p">
-        Show your interest towards some projects :)
+        Show your interest towards some services :)
       </p>
     </div>
   </div>
@@ -21,7 +19,7 @@ export default {
 
   components: { ProjectCard },
 
-  metaInfo () { return { title: 'Profile Wishlists' } },
+  metaInfo() { return { title: 'Profile Wishlists' } },
 
   data: () => ({
     wishlists: '',
@@ -35,12 +33,12 @@ export default {
     })
   },
 
-  mounted () {
+  mounted() {
     this.getWishlist()
   },
 
   methods: {
-    async getWishlist () {
+    async getWishlist() {
       this.wishlists = this.data.wishlists
     }
   }

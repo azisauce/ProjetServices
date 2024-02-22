@@ -1,51 +1,39 @@
-  <h3 align="center">Depanini</h3>
+  <h3 align="center">SwiftServe</h3>
 
   <p align="center">
-    A Fullstack Project
-    <br />
-    <a href="https://github.com/ivqonsanada/phive"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://phive.ivqonsanada.com/">View Demo</a>
-    ·
-    <a href="https://github.com/ivqonsanada/phive/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ivqonsanada/phive/issues">Request Feature</a>
+    A Good Service
+    
   </p>
-</p>
+<!-- ABOUT THE Service -->
 
-<!-- ABOUT THE PROJECT -->
+## About The Service
 
-## About The Project
-
-[![PHive Landing Page](public/github/landing-page.png)](https://phive.ivqonsanada.com)
-
-A kind of freelancing website for College. Where Lecturer can publish his/her project here waiting students apply to work on the project. Student will get some kind of rewards like salary and/or certification.
+A web app where you can find what you need in case of urgency eascily, you can check yourself.
 
 Features:
 
 -   Commons
-    -   Explore Project
-    -   Leaderboard
+    -   Explore Services
     -   Profile
     -   Message
     -   Inbox
--   Lecturer
-    -   Project Publications (Posting - Recruit - Review)
-    -   Project Box (to Organize Project)
-    -   Hire Student
--   Student
-    -   Apply Project (as Individual / as Team)
-    -   Party (for make the Team)
-    -   Project Box (to See current Apply/Ongoing/Finished projects)
-    -   Wishlist Project
+-   Helper
+    -   Service Publications (Create posts - Update posts - Delete posts)
+    -   Service Box (to Organize Service)
+    -   respond to users
+-   User
+    -   Apply Service
+    -   Service Box (to See current Apply/Ongoing/Finished Services)
+    -   Wishlist Service
 -   Experiment
     -   Adaptive while being Responsive (Mobile version is Mobile Apps-like)
 
 ### Built With
 
 -   [Laravel](https://laravel.com/)
+    - [PHPv7.2.5]
 -   [VueJS](https://vuejs.org/)
+    - [NodeJSv14.21.3]
 -   [Sass](https://sass-lang.com/)
 
 <!-- GETTING STARTED -->
@@ -57,6 +45,8 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 -   [npm](https://nodejs.org/)
+    !!! You may face some problems here, you need to install [nvm] first (In case you have NodeJS installed delete it)
+    !!! With nvm you can install the right version of nodeJS and the compatible version of npm
 -   [composer](https://getcomposer.org/download/)
 -   AMP stack
     -   Apache HTTP Server
@@ -69,9 +59,9 @@ To get a local copy up and running follow these simple steps.
     ```sh
     git clone https://github.com/ivqonsanada/phive.git
     ```
-2. Get into the project
+2. Get into the Service
     ```sh
-    cd phive
+    cd ProjetServices
     ```
 3. Install the frontend packages (NPM)
     ```sh
@@ -115,69 +105,33 @@ To get a local copy up and running follow these simple steps.
 7. Try dummy account
 
     ```dosini
-    # student
+    # user
     username = student@example.com
     password = password
 
-    # lecturer
+    # helper
     username = lecturer@example.ac.id
     password = password
     ```
 
 <!-- ROADMAP -->
 
-## Roadmap
-
-See the [open issues](https://github.com/ivqonsanada/phive/issues) for a list of proposed features (and known issues).
-
-<!-- CONTRIBUTING -->
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+A team of: Aziz Turki, Rhaiem Marwen, Arij Zahi, Ghada Amri, Baha Ben Slama, Adem Ben hassen
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 <!-- LICENSE -->
 
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-<!-- CONTACT -->
 
 ## Contact
 
 Team:
 
--   Ivqonnada Al Mufarrih - Full Stack Engineer - [@ivqonsanada](https://twitter.com/ivqonsanada) - ivqonnada@gmail.com
--   Verrel Radiman - Designer - [@verrel](https://www.linkedin.com/in/muhammad-verrel-radiman-61178314a)
--   Aji R. Gumiwang - Tester
+-   You can contact us with our outlook accounts
 
-Project Link: [https://github.com/ivqonsanada/phive](https://github.com/ivqonsanada/phive)
 
 <!-- ACKNOWLEDGEMENTS -->
 
-## Acknowledgements
 
--   [Laravel-Vue SPA starter kit](https://github.com/cretueusebiu/laravel-vue-spa)
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/ivqonsanada/phive.svg?style=for-the-badge
-[contributors-url]: https://github.com/ivqonsanada/phive/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ivqonsanada/phive.svg?style=for-the-badge
-[forks-url]: https://github.com/ivqonsanada/phive/network/members
-[stars-shield]: https://img.shields.io/github/stars/ivqonsanada/phive.svg?style=for-the-badge
-[stars-url]: https://github.com/ivqonsanada/phive/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ivqonsanada/phive.svg?style=for-the-badge
-[issues-url]: https://github.com/ivqonsanada/phive/issues
-[license-shield]: https://img.shields.io/github/license/ivqonsanada/phive.svg?style=for-the-badge
-[license-url]: https://github.com/ivqonsanada/phive/blob/master/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/ivqonnada

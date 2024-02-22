@@ -23,9 +23,12 @@
     </div>
 
     <div class="resgiter-form--container">
-      <router-link v-if="$matchMedia.xl" :to="{ name: 'index' }" class="mx-auto mb-1">
-        <h3>SwiftServe</h3>
-      </router-link>
+      <div class="desktop-nav__link--container" style="justify-content: center;">
+        <router-link :to="{ name: 'index' }" class="desktop-nav__link" active-class="desktop-nav__active-link">
+          <span class="nav-title">SwiftServe</span>
+        </router-link>
+
+      </div>
 
       <h1 class="login--h1">
         You are?

@@ -3,9 +3,11 @@
     <div v-if="$matchMedia.xl" class="desktop-nav">
       <div class="flex-row desktop-nav__container">
         <div class="flex-row">
-          <router-link :to="{ name: 'index' }">
-            <h3> SwiftServe </h3>
-          </router-link>
+          <div class="desktop-nav__link--container">
+            <router-link :to="{ name: 'index' }" class="desktop-nav__link" active-class="desktop-nav__active-link">
+              <span class="nav-title">SwiftServe</span>
+            </router-link>
+          </div>
 
           <div class="desktop-nav__link--container">
             <router-link v-for="(menu, index) in leftMenu" :key="`LeftMenu-${index}`" :to="menu.route"

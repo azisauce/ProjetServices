@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="project-box__top-container">
-      <router-link :to="{ name: 'project.details', params: { id: data.project.project_url } }">
-        <img class="project-box__item--img" :src="data.project.thumbnail_url" alt="">
-      </router-link>
+      
       <div class="project-box__item--container">
         <div>
           <span class="project-box__item--title">{{ data.project.title }}</span>
@@ -14,36 +12,14 @@
             <span class="iconify" data-icon="ic:round-access-time" width="12" height="12" />
             <span v-if="$matchMedia.sm" class="pre">Posted on</span> {{ date }}
           </div>
-          <div class="project-box__item--status-lecturer">
-            <span class="project-box__item--lecturer-icon"><b>H</b></span>
-            <span>Hiring</span>
-          </div>
+          
         </div>
 
         <div v-if="$matchMedia.xl">
           <p class="mb-1_5">
             {{ data.project.description }}
           </p>
-          <div class="project-box__item--summaries mb-1_5">
-            <div class="summary--item">
-              <div class="project-box__item--icon">
-                <span class="iconify project-box__item--icon" data-icon="fa-solid:dollar-sign" />
-              </div>
-              <span class="project-box__item--text">{{ rewards }}</span>
-            </div>
-            <div class="summary--item">
-              <div class="project-box__item--icon">
-                <span class="iconify project-box__item--icon " data-icon="ic:baseline-work" />
-              </div>
-              <span class="project-box__item--text">{{ applicantsCount }} Applicants</span>
-            </div>
-            <div class="summary--item">
-              <div class="project-box__item--icon">
-                <span class="iconify project-box__item--icon" data-icon="ri:team-fill" />
-              </div>
-              <span class="project-box__item--text">Max. {{ data.project.max_person }} Person</span>
-            </div>
-          </div>
+          
         </div>
         <div v-else class="project-box__details--container" @click="showDetails">
           <span class="project-box__item--details pointer">Details</span>
@@ -61,10 +37,8 @@
             End Application
           </button>
         </div>
-        <div class="nav-separator mt-1 mb-1" />
-        <router-link :to="{ name: 'shortlist.individual', params: { id: data.project.project_url } }" class="btn btn--grey-2 btn--small" tag="button">
-          Shortlist Students
-        </router-link>
+        
+        
       </div>
     </div>
 
@@ -81,26 +55,19 @@
             </div>
             <span class="project-box__item--text">{{ applicantsCount }} Applicants</span>
           </div>
-          <div class="summary--item">
-            <div class="project-box__item--icon">
-              <span class="iconify project-box__item--icon" data-icon="ri:team-fill" />
-            </div>
-            <span class="project-box__item--text">Max. {{ data.project.max_person }} Person</span>
-          </div>
+          
         </div>
 
         <div class="project-box__item--button-group">
           <router-link :to="{ name: 'project.editpost', params: { id: data.project.project_url } }" class="btn btn--blue btn--small" tag="button">
-            Edit Project
+            Edit Service
           </router-link>
           <button class="btn btn--decline btn--small" @click="endApplication">
-            End Application
+            End Service
           </button>
         </div>
-        <div class="nav-separator mt-1 mb-1" />
-        <router-link :to="{ name: 'shortlist.individual', params: { id: data.project.project_url } }" class="btn btn--grey-2 btn--small" tag="button">
-          Shortlist Students
-        </router-link>
+        
+        
       </div>
     </div>
   </div>

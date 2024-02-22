@@ -237,6 +237,7 @@ export default {
         if (this.user.role === 'Lecturer') {
           return [
           { route: { name: 'project.post' }, text: 'Post a Service', icon: 'ic:baseline-post-add' },
+          { route: { name: 'projectbox' }, text: 'Services Box', icon: 'simple-icons:polymerproject' },
             
             
            

@@ -2,7 +2,8 @@
   <div class="backwards">
     <div class="slide slide-1__background">
       <div>
-        <img v-if="$matchMedia.xl" class="slide-1__left-dashed moveInRightDash duration--2" src="/images/left-dashed-desktop.svg" alt="">
+        <img v-if="$matchMedia.xl" class="slide-1__left-dashed moveInRightDash duration--2"
+          src="/images/left-dashed-desktop.svg" alt="">
       </div>
       <div class="slide-1__container">
         <div class="slide-1__first-block ">
@@ -11,6 +12,7 @@
             Your search <br>
             for <br>
             Services.
+
           </h2>
           <div v-if="$matchMedia.xl" class="slide-1__ornament">
             <img class="slide-1__triangle fadeIn duration--2" src="/images/triangle.svg" alt="">
@@ -21,6 +23,7 @@
             <img class="slide-1__right-dashed moveInBottomLeft duration--2" src="/images/right-dashed.svg" alt="">
           </div>
           <p class="slide-1__paragraph moveInTop duration--1_5">
+
             Find the best for you
           </p>
           <router-link :to="{ name: 'explore' }" class="slide-1__button moveInTop duration--2" tag="button">
@@ -31,8 +34,8 @@
         <div class="slide-1__image-container moveInTop duration--2">
           <img class="slide-1__dot-1" src="/images/dot-blue.svg" alt="">
           <img v-if="!$matchMedia.xl" class="slide-1__dot-2" src="/images/dot-blue.svg" alt="">
-          <img v-if="!$matchMedia.xl" class="slide-1__image" height="344" src="/images/smiling-woman-looking.png" alt="">
-          <img v-else class="slide-1__image" src="/images/smiling-woman-looking-desktop.png" alt="">
+
+
         </div>
       </div>
       <div>
@@ -41,17 +44,20 @@
     </div>
     <div class="slide slide-2__container">
       <div v-if="$matchMedia.xl" class="slide-2__left">
-        <img class="slide-2__image" src="/images/slide-2.png" alt="">
+
       </div>
       <div class="slide-2__right">
         <h2 class="slide-2__heading">
-          See The <br>
+          Discover The <br>
           Available <br>
-          Services on <br>
+
+          Professionals on <br>
           The Platform
         </h2>
         <p class="slide-2__paragraph">
-          Knowing the available services that currently posted on the website and the offered services will currently help!
+          Staying updated on the active tasks listed on SwiftServe and the successfully completed ones will ignite your
+          enthusiasm!
+
         </p>
         <div class="slide-2__facts">
           <div class="slide-2__fact-item">
@@ -60,6 +66,7 @@
               {{ projectByStatusCount.hiring }}
             </div>
             <div class="slide-2__fact--name">
+
               Available services
             </div>
           </div>
@@ -69,6 +76,7 @@
               {{ projectByStatusCount.ongoing }}
             </div>
             <div class="slide-2__fact--name">
+
               Bad feedbacks
             </div>
           </div>
@@ -78,29 +86,14 @@
               {{ projectByStatusCount.finished }}
             </div>
             <div class="slide-2__fact--name">
-              Disliked projects
+              Finished Tasks
+
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="slide slide-3__container">
-      <h2 class="slide-3__heading">
-        Leaderboard
-      </h2>
-      <p class="slide-3__paragraph">
-        These are the highest achievers. Set them as examples, or beat their records. The choice is yours!
-      </p>
-      <div v-if="!$matchMedia.xl">
-        <TopBoardList :arrow="false" :data="topLeaderboards" />
-      </div>
-      <div v-else>
-        <TopBoardList :differ="false" :arrow="false" :show-all="true" :data="topLeaderboards" />
-      </div>
-      <router-link :to="{ name: 'leaderboard' }" class="btn btn--blue btn--large slide-3__button mt-1" tag="button">
-        See All Leaderboard
-      </router-link>
-    </div>
+
   </div>
 </template>
 
@@ -115,7 +108,7 @@ export default {
   middleware: ['newcomer'],
   components: { TopBoardList },
 
-  metaInfo () {
+  metaInfo() {
     return {
       title: 'Home',
       meta: [
@@ -137,7 +130,7 @@ export default {
     })
   },
 
-  mounted () {
+  mounted() {
     this.appendNavBg()
     this.getHomeData()
 
@@ -158,7 +151,7 @@ export default {
     // this.addProximity()
   },
 
-  beforeDestroy () {
+  beforeDestroy() {
     this.removeNavBg()
 
     window.onscroll = null
@@ -167,20 +160,20 @@ export default {
   },
 
   methods: {
-    appendNavBg () {
+    appendNavBg() {
       let sheet = document.createElement('style')
       sheet.setAttribute('id', 'tempNavBg')
       sheet.innerHTML = '.nav-base { background: #F2F4F6 } .desktop-nav { background: #F2F4F6 }'
       document.body.appendChild(sheet)
     },
 
-    removeNavBg () {
+    removeNavBg() {
       const sheetToBeRemoved = document.getElementById('tempNavBg')
       let sheetParent = sheetToBeRemoved.parentNode
       sheetParent.removeChild(sheetToBeRemoved)
     },
 
-    async getHomeData () {
+    async getHomeData() {
       await axios.get(`/api/home`)
         .then(({ data }) => {
           this.projectByStatusCount = data.project_count
@@ -216,3 +209,4 @@ export default {
   }
 }
 </style>
+

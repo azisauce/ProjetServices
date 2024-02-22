@@ -26,9 +26,11 @@
     </div>
 
     <div class="login-form--container">
-      <router-link v-if="$matchMedia.xl" :to="{ name: 'index' }" class="mx-auto mb-2_5">
-        <img class="desktop-nav__logo" src="/images/logo-blue.svg" alt="">
-      </router-link>
+      <div class="desktop-nav__link--container" style="justify-content: center;">
+        <router-link :to="{ name: 'index' }" class="desktop-nav__link" active-class="desktop-nav__active-link">
+          <span class="nav-title">SwiftServe</span>
+        </router-link>
+      </div>
 
       <h1 class="login--h1">
         Who are you?
@@ -44,7 +46,8 @@
         </div>
       </div>
 
-      <div v-if="!$matchMedia.xl" class="role--choose-effect" :class="{ 'role--student': studentRole, 'role--lecturer': lecturerRole }" />
+      <div v-if="!$matchMedia.xl" class="role--choose-effect"
+        :class="{ 'role--student': studentRole, 'role--lecturer': lecturerRole }" />
       <div v-else class="separator mt-1_5 mb-2">
         Sign In
       </div>
@@ -52,14 +55,17 @@
       <form @submit.prevent="login" @keydown="form.onKeydown($event)">
         <!-- Email -->
         <div class="login-input--container">
-          <input v-model="form.email" :class="{ 'is-invalid': form.errors.has('email') }" class="login-input" type="email" name="email" placeholder="Email" autocomplete="username" required>
+          <input v-model="form.email" :class="{ 'is-invalid': form.errors.has('email') }" class="login-input" type="email"
+            name="email" placeholder="Email" autocomplete="username" required>
           <has-error :form="form" field="email" />
         </div>
 
         <!-- Password -->
         <div class="login-input--container">
           <div class="right-tag__group ">
-            <input v-model="form.password" :class="{ 'is-invalid': form.errors.has('password') }" class="right-tag__input login--left-border" :type="passwordType" name="password" placeholder="Password" autocomplete="current-password" required>
+            <input v-model="form.password" :class="{ 'is-invalid': form.errors.has('password') }"
+              class="right-tag__input login--left-border" :type="passwordType" name="password" placeholder="Password"
+              autocomplete="current-password" required>
             <div v-show="hidePassword" class="pointer right-tag" @click="togglePassword">
               <span class="iconify password__hide-icon" data-icon="carbon:view-off-filled" width="20" height="20" />
             </div>
@@ -107,7 +113,7 @@ export default {
   layout: 'wide',
   middleware: 'guest',
 
-  metaInfo () { return { title: 'Sign In' } },
+  metaInfo() { return { title: 'Sign In' } },
 
   data: () => ({
     studentRole: false,
@@ -128,7 +134,7 @@ export default {
       snackbar: 'notification/snackbar'
     }),
 
-    role () {
+    role() {
       if (this.form.role === 'Student') {
         return {
           img: {
@@ -158,7 +164,7 @@ export default {
   },
 
   methods: {
-    async login () {
+    async login() {
       const isLecturer = this.form.email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(?!.*(student)).*.ac.id.*$/)
 
       if (this.form.role === 'Lecturer' && !isLecturer) {
@@ -186,16 +192,16 @@ export default {
         })
     },
 
-    chooseStudent () {
+    chooseStudent() {
       this.studentRole = true
       this.lecturerRole = false
     },
 
-    chooseLecturer () {
+    chooseLecturer() {
       this.lecturerRole = true
       this.studentRole = false
     },
-    togglePassword () {
+    togglePassword() {
       this.hidePassword = !this.hidePassword
       this.passwordType = this.hidePassword ? 'password' : 'text'
     }

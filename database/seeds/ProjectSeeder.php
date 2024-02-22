@@ -40,7 +40,7 @@ class ProjectSeeder extends Seeder
         ];
 
         $projectsDummy = [
-            [],[],[],[],[],[],[],[],[],[],[],[],[],
+            [], [], [], [], [], [], [], [], [], [], [], [], [],
             [
                 'title' => 'Financial Calculator',
                 'description' => 'I need a group of students to design and implement a financial calculator (web-based) for me that can calculate: 1. Fund requirement 2. Financial Check-up 3. Pension Fund 4. Education Fund 5. Marriage Fund 6. Latte factor for description and reference.'
@@ -131,10 +131,10 @@ class ProjectSeeder extends Seeder
             'project'
         ];
 
-/////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////
         // For Mr. Covey
         $randSalary = $salary[array_rand($salary)];
-        if ( $randSalary === '0' ) {
+        if ($randSalary === '0') {
             $certificate = 1;
             $has_salary = false;
         } else {
@@ -182,7 +182,7 @@ class ProjectSeeder extends Seeder
         shuffle($skills);
         shuffle($requirements);
 
-        for($j = 0; $j < 6; $j++) {
+        for ($j = 0; $j < 6; $j++) {
             $projectSkills[] = [
                 'project_id' => 1,
                 'name' => $skills[$j],
@@ -194,11 +194,11 @@ class ProjectSeeder extends Seeder
             ];
         }
 
-///////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////
 
         for ($i = 2; $i <= 24; $i++) {
             $randSalary = $salary[array_rand($salary)];
-            if ( $randSalary === '0' ) {
+            if ($randSalary === '0') {
                 $certificate = 1;
                 $has_salary = false;
             } else {
@@ -246,7 +246,7 @@ class ProjectSeeder extends Seeder
             shuffle($skills);
             shuffle($requirements);
 
-            for($j = 0; $j < 6; $j++) {
+            for ($j = 0; $j < 6; $j++) {
                 $projectSkills[] = [
                     'project_id' => $i,
                     'name' => $skills[$j],

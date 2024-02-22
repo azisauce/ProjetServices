@@ -1,6 +1,6 @@
 <template>
   <div class="login-page--container" :class="{ 'lecturer-bg': lecturerRole }">
-    
+
 
 
     <div class="login-form--container" style="margin: auto;">

@@ -100,9 +100,8 @@
       <div class="desktop__body--right">
         <div v-if="$matchMedia.xl" class="lecturer-info--left">
           <div class="lecturer-info--image-container mr-1">
-            <router-link :to="{ path: '/@/' + project.user.tagname }" class="lencturer-text-link">
               <img :src="project.user.avatar" :alt="`${project.user.full_name} Photo Profile`">
-            </router-link>
+            
           </div>
 
           <div class="details__poster--info">

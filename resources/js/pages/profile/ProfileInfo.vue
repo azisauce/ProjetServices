@@ -12,19 +12,7 @@
 
       
 
-      <div v-if="!$matchMedia.xl" class="info__sub--container">
-        <h3 class="info__h3">
-          Records
-        </h3>
-        <div class="record--items">
-          <div v-for="(record, index) in records" :key="`Record-${index}`" class="record--container">
-            <div class="record--icon-visited">
-              <span v-if="record.type === 'icon'" class="iconify" :data-icon="record.icon" width="20" height="20" />
-              <span v-else class="summary--text-icon">{{ record.icon }}</span>
-            </div> {{ record.content }}
-          </div>
-        </div>
-      </div>
+      
     </div>
 
     <div class="info--right">

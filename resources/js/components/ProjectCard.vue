@@ -2,14 +2,15 @@
   <div class="project__card--container">
     <div class="project__card--top-container pointer">
       <router-link :to="{ name: 'project.details', params: { id: project.project_url } }">
-        <img :src="project.thumbnail_url" height="150">
-        <!-- loading="lazy" -->
-      </router-link>
+          <img src="/images/your-image.png" alt="Your Image" height="150">
+          </router-link>
+      
     </div>
 
     <div class="project__card--body-container">
       <div class="project__card--body-salary">
-        {{ rewards }}
+        
+        See details!
       </div>
 
       <div class="project__card--info-container">
@@ -18,9 +19,7 @@
         </h2>
         <div class="project__card--info--consistency">
           <div class="project__card--post-info">
-            <div class="ellipsies">
-              Expertise in : {{ expertiseIn }}
-            </div>
+            
             <div class="ellipsies">
               Posted by : {{ project.user.full_name }}
             </div>

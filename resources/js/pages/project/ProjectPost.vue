@@ -49,7 +49,7 @@
           </div>
         </div>
 
-        
+
 
         <div class="form-group__container">
           <h4 class="form-group__input-name">
@@ -93,7 +93,7 @@
         </div>
       </div>
 
-      
+
 
 
       <hr class="form--hr">
@@ -118,7 +118,8 @@
             Let's add some detailed requirements
           </p>
           <ul class="post__requirements">
-            <RequirementItem v-for="(requirement, index) in form.requirements" :key="`requirements-${index}`" :data="requirement" :deletable="true" :index="index" @click="deleteRequirement" />
+            <RequirementItem v-for="(requirement, index) in form.requirements" :key="`requirements-${index}`"
+              :data="requirement" :deletable="true" :index="index" @click="deleteRequirement" />
           </ul>
 
           <div class="flex-center unselectable post__add-skill pointer" @click="showAddRequirement">
@@ -137,9 +138,11 @@
               <div>
                 <hr class="my-0 mb-2_5">
                 <div class="">
-                  <textarea v-model="anotherRequirements" class="form-group__input-textarea" placeholder="Max. 500 words" rows="5" />
+                  <textarea v-model="anotherRequirements" class="form-group__input-textarea" placeholder="Max. 500 words"
+                    rows="5" />
                   <p class="info__p">
-                    You can add multiple requirements separated by dot (<span class="iconify" data-icon="carbon:dot-mark" width="12" height="12" />)
+                    You can add multiple requirements separated by dot (<span class="iconify" data-icon="carbon:dot-mark"
+                      width="12" height="12" />)
                   </p>
                 </div>
               </div>
@@ -154,7 +157,7 @@
         </div>
       </div>
 
-      
+
 
       <div class="form-group__container">
         <h4 class="form-group__input-name">
@@ -167,17 +170,18 @@
               <span class="checkbox-checkmark" />
             </label>
             <div v-show="form.salary" class="post__form--parent post-salary__group">
-              
+
               <div class="form-group__container">
                 <h4 class="form-group__input-name">
                   Compatible cards
                 </h4>
                 <div class="">
-                  <input v-model="form.salary_amount" class="form-group__input-text" placeholder="Give your best offer" type="number" min="0">
+                  <input v-model="form.salary_amount" class="form-group__input-text" placeholder="Give your best offer"
+                    type="number" min="0">
                 </div>
               </div>
 
-              
+
             </div>
             <has-error :form="form" field="salary_amount" />
           </div>
@@ -214,7 +218,7 @@ export default {
   middleware: ['auth', 'lecturer'],
   components: { RequirementItem },
 
-  metaInfo () { return { title: 'Post Project' } },
+  metaInfo() { return { title: 'Post Project' } },
 
   data: () => ({
     thumbnail: '',
@@ -259,7 +263,7 @@ export default {
 
   methods: {
 
-    async uploadThumbnail (e) {
+    async uploadThumbnail(e) {
       const file = e.target.files[0]
 
       // if (file.size > 516 * 1024) {
@@ -284,7 +288,7 @@ export default {
       }
     },
 
-    async deleteThumbnail () {
+    async deleteThumbnail() {
       this.form2.file = null
 
       this.form2.submit('delete', '/api/project/thumbnail')
@@ -295,16 +299,16 @@ export default {
         })
     },
 
-    showAddSkill () {
+    showAddSkill() {
       this.$refs.addSkillModal.openModal()
       this.skillLength = this.form.skills.length
     },
 
-    showAddRequirement () {
+    showAddRequirement() {
       this.$refs.addRequirementModal.openModal()
     },
 
-    addSkill () {
+    addSkill() {
       let oldSkills = this.form.skills.map(skill => skill.name)
       oldSkills.push(...this.anotherSkills.split(',').map(skill => skill.trim()).filter(skill => skill !== ''))
 
@@ -324,7 +328,7 @@ export default {
       this.anotherSkills = ''
     },
 
-    addRequirement () {
+    addRequirement() {
       let requirementSet = new Set(this.anotherRequirements.split('.'))
 
       let anotherRequirements = [...requirementSet].map(requirement => {
@@ -336,7 +340,7 @@ export default {
       this.anotherRequirements = ''
     },
 
-    async postProject (status) {
+    async postProject(status) {
       this.form.status = status
 
       this.form.submit('post', '/api/project/post')
@@ -346,12 +350,12 @@ export default {
         })
     },
 
-    deleteSkill (e) {
+    deleteSkill(e) {
       let abc = this.form.skills.filter(a => a.name !== e)
       this.form.skills = abc
     },
 
-    deleteRequirement (index) {
+    deleteRequirement(index) {
       this.form.requirements.splice(index, 1)
     }
   }

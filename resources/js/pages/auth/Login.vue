@@ -1,10 +1,6 @@
 <template>
   <div class="login-page--container" :class="{ 'lecturer-bg': lecturerRole }">
-    <div v-if="!$matchMedia.xl" class="login-page--logo">
-      <router-link :to="{ name: 'index' }">
-        <img src="/images/logo.svg" alt="">
-      </router-link>
-    </div>
+    
 
 
     <div class="login-form--container" style="margin: auto;">

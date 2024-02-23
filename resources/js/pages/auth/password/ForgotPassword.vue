@@ -6,7 +6,7 @@
     </h2>
 
     <p class="forgot-password__p">
-      Don’t worry! Resetting your password is easy. Just type in this email field below that you registered on Phive.
+      Don’t worry! Resetting your password is easy. Just type in this email field below that you registered.
     </p>
 
     <form class="forgot-password__form--container" @submit.prevent="send" @keydown="form.onKeydown($event)">
@@ -22,9 +22,7 @@
           </v-button>
         </div>
 
-        <p class="forgot-password__further-information">
-          For further information. Please kindly reach out to <a href="mailto:phive77@gmail.com">phive77@gmail.com</a>
-        </p>
+       
       </div>
 
       <!-- Submit Button -->

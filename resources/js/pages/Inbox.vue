@@ -46,12 +46,12 @@
               Inbox
             </h2>
           </div>
-          <button class="btn--clear flex-center" @click="toggleFilter">
+          <!-- <button class="btn--clear flex-center" @click="toggleFilter">
             <div class="icon">
               <span class="iconify" data-icon="ic:round-filter-list" height="24" width="24" />
               <span v-if="$matchMedia.xl">Filters</span>
             </div>
-          </button>
+          </button> -->
         </div>
 
         <div v-show="showFilter && $matchMedia.xl" class="explore--filter mb-1_5 ">

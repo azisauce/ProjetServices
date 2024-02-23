@@ -2,9 +2,10 @@
   <div>
     <div class="project-box__top-container">
       <div class="">
-        <router-link :to="{ name: '@.info', params: { tagname: data.message_body.sender.tagname } }">
+        <img class="project-box__img" :src="data.message_body.sender.avatar" alt="">
+        <!-- <router-link :to="{ name: '@.info', params: { tagname: data.message_body.sender.tagname } }">
           <img class="project-box__img" :src="data.message_body.sender.avatar" alt="">
-        </router-link>
+        </router-link> -->
       </div>
       <div class="project-box__content--container">
         <router-link v-if="!$matchMedia.xl" :to="{ name: 'message', params: { tagname: data.message_body.sender.tagname } }" class="link--clean">

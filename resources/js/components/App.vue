@@ -39,7 +39,7 @@ export default {
   }),
 
   metaInfo () {
-    const appName = 'PHive'
+    const appName = 'SwiftServe'
 
     return {
       title: appName,

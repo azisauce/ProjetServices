@@ -80,7 +80,7 @@
               {{ title }}
             </div>
             <div v-show="!title">
-              <img src="/images/logo-blue.svg" alt="">
+              <h2 class="custom-img">Swift Serve.</h2>
             </div>
           </a>
         </div>
@@ -101,9 +101,7 @@
 
             <div class="nav--brand-container">
               <a class="nav-brand">
-                <router-link :to="{ name: 'index' }">
-                  <img src="/images/logo-blue.svg" alt="">
-                </router-link>
+                <h2 class="custom-img">Swift Serve.</h2>
               </a>
             </div>
             <div class="nav-stabilizer" />

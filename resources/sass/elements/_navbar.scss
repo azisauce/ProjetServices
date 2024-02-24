@@ -128,6 +128,11 @@
   transform: translateX(-100%);
 }
 
+.custom-img {
+  color: #f9d81f;
+  font-size: 70%; 
+}
+
 .nav--overlay-open {
   animation: overlayOpen 0.25s var(--bezier) forwards;
 }
